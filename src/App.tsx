@@ -8,7 +8,8 @@ const App: React.FC = () => {
   return (
     <React.Fragment>
       <h1>Hello React</h1>  
-      <h1>Tjajkep</h1>  
+      <h1>Tjajkep</h1>
+      <h1>diketik di github</h1>
     </React.Fragment>
     )
 }
