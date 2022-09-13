@@ -1,0 +1,12 @@
+.admin-layout{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.admin-layout--sidebar{
+    width: 300px;
+    background-color: gray;
+}
+.admin-layout--content{
+
+}
