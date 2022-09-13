@@ -15,7 +15,7 @@ function Router() {
     <Routes>
       <Route path="/" element={<h1>Home</h1>}/>
       <Route path="/teams" element={<h1>Teams</h1>}/>
-      <Route path="/team/:teamId" element={<h1>Teams Detail</h1>}/>
+      <Route path="/teams/:teamId" element={<h1>Teams Detail</h1>}/>
 
     </Routes>
   </BrowserRouter>
