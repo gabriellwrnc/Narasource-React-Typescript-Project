@@ -13,14 +13,10 @@ function Router() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<h1>Test</h1>}>
-        <Route index element={<h1>Home</h1>} />
-        <Route path="teams" element={<h1>Team</h1>}>
-          <Route path=":teamId" element={<h1>Team ID</h1>} />
-          <Route path="new" element={<h1>New</h1>} />
-          <Route index element={<h1>League</h1>} />
-        </Route>
-      </Route>
+      <Route path="/" element={<h1>Home</h1>}/>
+      <Route path="/teams" element={<h1>Teams</h1>}/>
+      <Route path="/team/:teamId" element={<h1>Teams Detail</h1>}/>
+
     </Routes>
   </BrowserRouter>
   );
