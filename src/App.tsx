@@ -1,15 +1,12 @@
 import React from "react";
-
-// const App = () => {
-//   return <h1>Halo React!</h1>
-// }
-
+import Router from "./Router";
 const App: React.FC = () => {
   return (
     <React.Fragment>
       <h1>Hello React</h1>  
-      <h1>Tjajkep</h1>
-      <h1>diketik di github</h1>
+      <p>Tjajkep</p>
+      <p>diketik di github</p>
+      <Router/>
     </React.Fragment>
     )
 }
