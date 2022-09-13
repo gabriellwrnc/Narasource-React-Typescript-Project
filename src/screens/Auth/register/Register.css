@@ -1,0 +1,58 @@
+.form-register {
+  margin-top: 26px;
+}
+
+.form-register--title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.form-register--content {
+  margin: 60px 40px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 60vh;
+  padding: 15px;
+  margin: 5px 0 18px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="checkbox"] {
+  margin-bottom: 18px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-register--button {
+  margin-left: 16px;
+}
+
+.btn {
+  position: absolute;
+  background-color: #fc76c4;
+  color: white;
+  padding: 16px 20px;
+  margin: 18px 0;
+  border: none;
+  cursor: pointer;
+  width: 60vh;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+  text-decoration: none;
+}

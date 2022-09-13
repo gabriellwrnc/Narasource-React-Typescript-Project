@@ -2,9 +2,9 @@ import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Admin from "./layouts/Admin/Admin";
-// const App = () => {
-//   return <h1>Halo React!</h1>
-// }
+import Auth from "./layouts/Auth/Auth";
+import Login from "./screens/Auth/login/Login";
+import Register from "./screens/Auth/register/Register";
 
 const Router: React.FC = () => {
   return (
@@ -20,9 +20,9 @@ const Router: React.FC = () => {
           />
         </Route>
 
-        <Route path="/auth" element={<Outlet />}>
-          <Route path="/auth/login" element={<h1>Auth Login</h1>} />
-          <Route path="/auth/register" element={<h1>Auth Register</h1>} />
+        <Route path="/auth" element={<Auth />}>
+          <Route path="/auth/login" element={<Login />} />
+          <Route path="/auth/register" element={<Register />} />
         </Route>
       </Routes>
     </BrowserRouter>
