@@ -1,16 +1,13 @@
 import React from "react";
-import { render } from "react-dom";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import Admin from "./layouts/Admin/Admin";
-import Auth from "./layouts/Auth/Auth";
-import Login from "./screens/Auth/login/Login";
-import Register from "./screens/Auth/register/Register";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Admin, Auth } from "./layouts";
+import { Home, Login, Register } from "./screens";
 
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<Home />} />
 
         <Route path="/admin" element={<Admin />}>
           <Route path="/admin/dashboard" element={<h1> Dashboard</h1>} />

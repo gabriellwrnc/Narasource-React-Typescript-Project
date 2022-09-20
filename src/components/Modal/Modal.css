@@ -1,0 +1,36 @@
+.modal-wrapper {
+  background: #000;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.modal-box {
+  background: #fff;
+  width: 500px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.modal-box-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+.modal-box-title {
+}
+.modal-box-close {
+}
+.modal-box-content {
+  padding: 10px;
+}
+.modal-box-footer {
+  padding: 10px;
+  border-top: 1px solid gray;
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+}
