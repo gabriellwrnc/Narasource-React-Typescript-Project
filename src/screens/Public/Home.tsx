@@ -31,7 +31,13 @@ const Home: React.FC = () => {
         submiText="Approve"
         closeText="Cancel"
       >
-        ini adalah children
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, a! Omnis
+        velit itaque ipsam rem eum? Unde laudantium nemo ab neque fugit
+        architecto deserunt, sint odit! Necessitatibus vitae laborum sapiente?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        mollitia natus aut molestias magni nihil ducimus praesentium doloremque!
+        Quasi et dolores, eligendi sed soluta temporibus debitis. Voluptatem
+        accusamus eaque aspernatur!
       </Modal>
     </>
   );

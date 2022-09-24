@@ -1,0 +1,11 @@
+.valid {
+  display: none;
+}
+
+.invalid {
+  color: red;
+}
+
+.PWdRes {
+  margin: 0 10px;
+}

@@ -14,7 +14,7 @@
 
 input[type="text"],
 input[type="password"] {
-  width: 60vh;
+  width: 100%;
   padding: 15px;
   margin: 5px 0 18px 0;
   display: inline-block;
@@ -55,4 +55,20 @@ input[type="password"]:focus {
 a {
   color: dodgerblue;
   text-decoration: none;
+}
+
+.form-register--content-box {
+  position: relative;
+  width: 490px;
+}
+
+.form-register--content-box-password {
+  position: relative;
+}
+
+i {
+  position: absolute;
+  top: 18px;
+  right: -10px;
+  transform: translateY(20%);
 }
