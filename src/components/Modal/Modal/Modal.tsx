@@ -1,4 +1,5 @@
 import React from "react";
+import Button, { ButtonProps } from "../Button/Button";
 import "./Modal.css";
 
 interface ModalProps {
@@ -9,6 +10,8 @@ interface ModalProps {
   children?: React.ReactNode;
   closeText?: string;
   submiText?: string;
+  closeBtnProps?: Omit<ButtonProps, "children">;
+  submitBtnProps?: Omit<ButtonProps, "children">;
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
@@ -32,8 +35,12 @@ const Modal: React.FC<ModalProps> = (props) => {
           </div>
           <div className="modal-box-content">{children}</div>
           <div className="modal-box-footer">
-            <button onClick={() => onClose()}>{closeText}</button>
-            <button onClick={() => onSubmit()}>{submitText}</button>
+            <Button {...props.closeBtnProps} onClick={() => onClose()}>
+              {closeText}
+            </Button>
+            <Button {...props.submitBtnProps} onClick={() => onSubmit()}>
+              {submitText}
+            </Button>
           </div>
         </div>
       </div>

@@ -36,7 +36,7 @@ input[type="password"]:focus {
   margin-left: 16px;
 }
 
-.btn {
+.btnLogin {
   position: absolute;
   background-color: #fc76c4;
   color: white;

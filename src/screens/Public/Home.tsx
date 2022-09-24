@@ -30,6 +30,8 @@ const Home: React.FC = () => {
         onSubmit={() => approve()}
         submiText="Approve"
         closeText="Cancel"
+        closeBtnProps={{ type: "secondary", size: "sm" }}
+        submitBtnProps={{ type: "success", size: "lg" }}
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, a! Omnis
         velit itaque ipsam rem eum? Unde laudantium nemo ab neque fugit

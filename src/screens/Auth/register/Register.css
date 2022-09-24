@@ -36,7 +36,7 @@ input[type="password"]:focus {
   margin-left: 16px;
 }
 
-.btn {
+.btnRegis {
   position: absolute;
   background-color: #fc76c4;
   color: white;
@@ -48,7 +48,7 @@ input[type="password"]:focus {
   opacity: 0.9;
 }
 
-.btn:hover {
+.btnRegis:hover {
   opacity: 1;
 }
 

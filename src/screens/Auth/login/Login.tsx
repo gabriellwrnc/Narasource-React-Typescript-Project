@@ -32,7 +32,7 @@ const Login: React.FC = () => {
           </p>
         </form>
         <div className="form-login--button">
-          <button type="submit" className="btn">
+          <button type="submit" className="btnLogin">
             Login
           </button>
         </div>
