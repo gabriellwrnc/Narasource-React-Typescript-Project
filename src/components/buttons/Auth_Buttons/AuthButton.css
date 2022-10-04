@@ -1,0 +1,21 @@
+.btn {
+  border: none;
+  border-radius: 3.2rem;
+  font-family: "Reem Kufi", sans-serif;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 80%;
+  transition: 0.2s;
+}
+
+.btn--size-md {
+  padding: 0.9rem 13rem;
+  font-size: 2.2rem;
+}
+
+.btn--type-primary {
+  background-color: #3186f5;
+  color: #ffff;
+}
