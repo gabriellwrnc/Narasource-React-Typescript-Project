@@ -31,7 +31,7 @@ const FormLogin: React.FC = () => {
               value={email}
               type="email"
               id="email"
-              className="input-field"
+              className="input-field lg-field"
               placeholder="Masukkan email anda"
             />
           </div>
@@ -47,7 +47,7 @@ const FormLogin: React.FC = () => {
               value={password}
               type={passwordShown ? "text" : "password"}
               id="password"
-              className="input-field"
+              className="input-field sm-field"
               placeholder="Masukkan sandi anda"
             />
             <img

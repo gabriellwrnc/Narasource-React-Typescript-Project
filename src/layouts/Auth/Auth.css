@@ -34,7 +34,7 @@ body {
   top: 25%;
 }
 .d-none {
-  opacity: 0;
+  display: none;
 }
 
 .logo-auth {

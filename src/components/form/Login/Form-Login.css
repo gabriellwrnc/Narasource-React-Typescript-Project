@@ -1,6 +1,7 @@
 .input-title {
   font-size: 22px;
   font-weight: 500;
+  color: #3186f5;
 }
 
 .input-icon {
@@ -18,7 +19,6 @@
 }
 
 .input-field {
-  width: 200px;
   border: none;
   font-family: "Poppins", sans-serif;
   font-size: 17px;
@@ -28,15 +28,23 @@
   outline: none;
 }
 
+.sm-field {
+  width: 200px;
+}
+
+.lg-field {
+  width: 240px;
+}
+
 .form-login-email-input {
   width: 326px;
-  margin-top: 34px;
+  margin-top: 30px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #b3b3b3;
+  border-bottom: 1px solid #3186f5;
 }
 
 .form-login-password {
-  margin-top: 62px;
+  margin-top: 42px;
 }
 
 .icon-show-pass {
@@ -52,5 +60,5 @@ input:-webkit-autofill:focus {
 }
 
 .login-btn {
-  margin: 60px 0 60px 0;
+  margin: 48px 0 60px 0;
 }
