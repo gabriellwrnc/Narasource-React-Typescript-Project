@@ -1,0 +1,45 @@
+.input-icon-regis {
+  position: relative;
+  padding: 0 14px;
+}
+.icon-regis {
+  font-size: 15px;
+}
+.form-regis-input {
+  width: 343px;
+  margin-top: 14px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #3186f5;
+}
+
+.input-field-regis {
+  position: relative;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  bottom: 3px;
+}
+
+.input-field-regis:focus {
+  outline: none;
+}
+
+.sm-field-regis {
+  width: 220px;
+}
+
+.lg-field-regis {
+  width: 260px;
+}
+
+.mt-form {
+  margin-top: 16px;
+}
+
+.icon-show-pass-regis {
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+  left: 30px;
+  width: 22px;
+}

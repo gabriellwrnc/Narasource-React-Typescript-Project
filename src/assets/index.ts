@@ -1,4 +1,5 @@
 export { default as logo } from "./Logo.svg"
+export { default as person } from "./person.svg"
 export { default as password_icon} from "./password.svg"
 export { default as email_icon } from "./email.svg"
 export { default as show_password } from "./showPass.svg"

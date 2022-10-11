@@ -21,7 +21,7 @@ const FormLogin: React.FC = () => {
     <div className="form-login-component">
       <form action="">
         <div className="form-login-email">
-          <h1 className="input-title">Email</h1>
+          <h1 className="input-title lg-input-title">Email</h1>
           <div className="form-login-email-input">
             <label htmlFor="email" className="input-icon">
               <img src={email_icon} className="icon" />
@@ -37,7 +37,7 @@ const FormLogin: React.FC = () => {
           </div>
         </div>
         <div className="form-login-password">
-          <h1 className="input-title">Password</h1>
+          <h1 className="input-title lg-input-title">Password</h1>
           <div className="form-login-email-input">
             <label htmlFor="password" className="input-icon-pass">
               <img src={password_icon} className="icon" />

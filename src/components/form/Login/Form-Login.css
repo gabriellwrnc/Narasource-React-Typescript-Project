@@ -1,7 +1,14 @@
 .input-title {
+  color: #3186f5;
+}
+
+.lg-input-title {
   font-size: 22px;
   font-weight: 500;
-  color: #3186f5;
+}
+.sm-input-title {
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .input-icon {
