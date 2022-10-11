@@ -52,11 +52,19 @@ const Register: React.FC = () => {
       <div className="form-register--content">
         <form action="">
           <div className="form-register--content-box">
-            <label htmlFor="username">Username</label> <br />
+            <label htmlFor="firstname">First Name</label> <br />
             <input
-              id="username"
+              id="firstName"
               type="text"
-              placeholder="Enter Username"
+              placeholder="Enter firstName"
+              required
+            />{" "}
+            <br />
+            <label htmlFor="lastName">Last Name</label> <br />
+            <input
+              id="lastName"
+              type="text"
+              placeholder="Enter lastName"
               required
             />{" "}
             <br />
@@ -65,6 +73,14 @@ const Register: React.FC = () => {
               id="email"
               type="text"
               placeholder="Enter Email"
+              required
+            />{" "}
+            <br />
+            <label htmlFor="phoneNumber">Phone Number</label> <br />
+            <input
+              id="phoneNumber"
+              type="text"
+              placeholder="Enter phoneNumber"
               required
             />{" "}
             <br />
