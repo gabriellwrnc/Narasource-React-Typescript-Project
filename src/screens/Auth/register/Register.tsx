@@ -1,10 +1,59 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import "./Register.css";
 import { Link } from "react-router-dom";
 import { PWDRequisite } from "../../../components/Modal";
 import { checkServerIdentity } from "tls";
 
 const Register: React.FC = () => {
+  //sesuai kebutuhan backend
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    confPassword: "",
+  });
+
+  const [agree, setAgree] = useState<boolean>(true);
+  const [btnDisable, setBtnDisable] = useState<boolean>(true);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setData({
+      ...data,
+      [e.target.name]: value,
+    });
+  };
+
+  const btnDisablbeFn = () => {
+    if (
+      data.firstName.length > 0 &&
+      data.lastName.length > 0 &&
+      data.email.length > 0 &&
+      data.phoneNumber.length &&
+      data.password.length > 0 &&
+      data.confPassword.length > 0
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  useEffect(() => {
+    const state = btnDisablbeFn();
+    setBtnDisable(state);
+    console.log("render");
+  }, [
+    data.firstName.length,
+    data.lastName.length,
+    data.email.length,
+    data.phoneNumber.length,
+    data.password.length,
+    data.confPassword.length,
+  ]);
+
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordStrenght, setPasswordStrength] = useState("");
   const [pwdRequisite, setPwdRequisite] = useState(false);
@@ -55,6 +104,8 @@ const Register: React.FC = () => {
             <label htmlFor="firstname">First Name</label> <br />
             <input
               id="firstName"
+              name="firstName"
+              onChange={handleChange}
               type="text"
               placeholder="Enter firstName"
               required
@@ -63,6 +114,8 @@ const Register: React.FC = () => {
             <label htmlFor="lastName">Last Name</label> <br />
             <input
               id="lastName"
+              name="lastName"
+              onChange={handleChange}
               type="text"
               placeholder="Enter lastName"
               required
@@ -71,6 +124,8 @@ const Register: React.FC = () => {
             <label htmlFor="email">Email</label> <br />
             <input
               id="email"
+              name="email"
+              onChange={handleChange}
               type="text"
               placeholder="Enter Email"
               required
@@ -79,6 +134,8 @@ const Register: React.FC = () => {
             <label htmlFor="phoneNumber">Phone Number</label> <br />
             <input
               id="phoneNumber"
+              name="phoneNumber"
+              onChange={handleChange}
               type="text"
               placeholder="Enter phoneNumber"
               required
@@ -88,10 +145,14 @@ const Register: React.FC = () => {
             <div className="form-register--content-box-password">
               <input
                 id="password"
+                name="password"
                 type={passwordShown ? "text" : "password"}
                 placeholder="Enter Password"
                 value={passwordStrenght}
-                onChange={handleOnChange}
+                onChange={(e) => {
+                  handleChange(e);
+                  handleOnChange(e);
+                }}
                 onFocus={handleOnFocus}
                 onBlur={handleOnBlur}
                 onKeyUp={handleOnKeyUp}
@@ -116,18 +177,25 @@ const Register: React.FC = () => {
             ) : null}
             <label>Confirm Password</label> <br />
             <input
+              name="confPassword"
+              onChange={handleChange}
               type="password"
               placeholder="Enter Password Confirmation"
               required
             />{" "}
             <br />
+            <input type="checkbox" name="" />
             <p>
               Already have an account? <Link to="/auth/login">Login</Link>
             </p>
           </div>
         </form>
         <div className="form-register--button">
-          <button type="submit" className="btnRegis">
+          <button
+            type="submit"
+            className={`btnRegis ${btnDisable ? "" : "btnRegis--active"}`}
+            disabled={btnDisable}
+          >
             Register
           </button>
         </div>
