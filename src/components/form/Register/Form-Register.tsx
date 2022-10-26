@@ -6,6 +6,7 @@ import {
   person,
   show_password,
 } from "../../../assets";
+import AuthButton from "../../buttons/Auth_Buttons/AuthButton";
 import "./Form-Register.css";
 
 const FormRegister: React.FC = () => {
@@ -107,6 +108,21 @@ const FormRegister: React.FC = () => {
               onClick={togglePasswordConfirm}
             />
           </div>
+        </div>
+        <div className="form-regis-terms">
+          <input type="checkbox" id="terms" className="terms" />
+          <label htmlFor="terms">
+            Saya telah membaca dan menyetujui{" "}
+            <a href="" className="terms-anchor">
+              Persyaratan & Kebijakan
+            </a>{" "}
+            dari pihak NaraSource.
+          </label>
+        </div>
+        <div className="register-btn">
+          <AuthButton type="primary" size="sm">
+            Daftar
+          </AuthButton>
         </div>
       </form>
     </div>

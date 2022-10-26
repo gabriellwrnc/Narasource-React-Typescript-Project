@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Auth } from "./layouts";
-import { Login } from "./screens/Auth";
-import Register from "./screens/Auth/Register/Register";
+import { ForgotPassword, Login, Register } from "./screens/Auth";
 
 const Router: React.FC = () => {
   return (
@@ -10,6 +9,7 @@ const Router: React.FC = () => {
         <Route path="/auth" element={<Auth />}>
           <Route path="/auth/login" element={<Login />}></Route>
           <Route path="/auth/register" element={<Register />}></Route>
+          <Route path="/auth/forgotPassword" element={<Login />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

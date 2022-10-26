@@ -67,5 +67,18 @@ input:-webkit-autofill:focus {
 }
 
 .login-btn {
-  margin: 48px 0 60px 0;
+  margin: 28px 0 60px 0;
+}
+
+.form-login-forgot {
+  font-family: "Poppins", sans-serif;
+  text-align: end;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 17px;
+}
+
+.forgot {
+  text-decoration: none;
+  color: #3186f5;
 }

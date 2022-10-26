@@ -19,16 +19,19 @@
 
 .form-login--title .head {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 35px;
   color: #3186f5;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   letter-spacing: 0.1rem;
 }
 
 .form-login--title .foot {
+  margin: auto;
+  width: 327px;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 12px;
-  color: #3186f5;
+  font-size: 14px;
+  color: black;
 }
 
 @media (max-width: 1000px) {
@@ -38,6 +41,7 @@
 }
 
 .form-login--content {
+  width: fit-content;
   margin: 56px 156px;
 }
 
@@ -53,4 +57,9 @@
 
 .link {
   color: #3186f5;
+}
+
+.form-forgot-password {
+  width: fit-content;
+  margin: auto;
 }

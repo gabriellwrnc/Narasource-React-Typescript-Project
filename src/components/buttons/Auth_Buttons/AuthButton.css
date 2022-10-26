@@ -11,9 +11,15 @@
 }
 
 .btn--size-md {
-  padding: 0.7rem 13rem;
+  width: 326px;
+  height: 48px;
   font-weight: 500;
   font-size: 2.2rem;
+}
+
+.btn--size-sm {
+  width: 343px;
+  height: 36px;
 }
 
 .btn--type-primary {

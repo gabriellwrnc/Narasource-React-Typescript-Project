@@ -43,3 +43,28 @@
   left: 30px;
   width: 22px;
 }
+
+.form-regis-terms {
+  margin: 33px 10px 0 0;
+  display: flex;
+  gap: 12px;
+  color: grey;
+  width: 330px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+.terms {
+  width: 16px;
+  height: 16px;
+  accent-color: #2aa302;
+}
+.terms-anchor {
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.register-btn {
+  margin: 37px 0 37px 0;
+}

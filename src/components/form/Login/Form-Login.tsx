@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   cancel_show_password,
   email_icon,
@@ -56,6 +57,11 @@ const FormLogin: React.FC = () => {
               onClick={togglePassword}
             />
           </div>
+        </div>
+        <div className="form-login-forgot">
+          <Link to="/auth/forgotPassword" className="link forgot">
+            Lupa Kata Sandi?
+          </Link>
         </div>
         <div className="login-btn">
           <AuthButton type="primary" size="md">
