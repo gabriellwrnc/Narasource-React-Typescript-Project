@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { email_icon } from "../../../assets";
-import { AuthButton } from "../../../components";
+import { email_icon } from "../../../../assets";
+import { AuthButton } from "../../../../components";
 import "./Forgot.css";
 
 const ForgotPassword: React.FC = () => {
@@ -33,7 +33,7 @@ const ForgotPassword: React.FC = () => {
         </div>
       </div>
       <div className="forgot-btn">
-        <AuthButton size="md" type="primary">
+        <AuthButton size="md" color="primary">
           Reset Sandi
         </AuthButton>
       </div>

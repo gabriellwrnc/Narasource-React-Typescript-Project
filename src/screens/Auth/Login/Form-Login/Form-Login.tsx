@@ -1,37 +1,53 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   cancel_show_password,
   email_icon,
   password_icon,
   show_password,
-} from "../../../assets";
-import AuthButton from "../../buttons/Auth_Buttons/AuthButton";
+} from "../../../../assets";
+import { AuthButton } from "../../../../components";
+import { authService } from "../../../../services";
+import { LoginRequest } from "../../../../types/Login";
 import "./Form-Login.css";
 
 const FormLogin: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
 
+  const login = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
+
+      const formData = new FormData(e.target as HTMLFormElement);
+      const inputObject = Object.fromEntries(formData);
+
+      const resp = await authService.login(inputObject as any as LoginRequest);
+      console.log("resp", resp);
+      localStorage.setItem("@token", resp.data.token);
+      navigate("/dashboard/home-page"); //ganti
+    } catch (error: any) {
+      alert(error.response.data.message);
+    }
+  };
+
   return (
     <div className="form-login-component">
-      <form action="">
+      <form onSubmit={(event) => login(event)}>
         <div className="form-login-email">
           <h1 className="input-title lg-input-title">Email</h1>
           <div className="form-login-email-input">
-            <label htmlFor="email" className="input-icon">
+            <label htmlFor="email-login" className="input-icon">
               <img src={email_icon} className="icon" />
             </label>
             <input
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
+              name="email"
               type="email"
-              id="email"
+              id="email-login"
               className="input-field lg-field"
               placeholder="Masukkan email anda"
             />
@@ -40,14 +56,13 @@ const FormLogin: React.FC = () => {
         <div className="form-login-password">
           <h1 className="input-title lg-input-title">Password</h1>
           <div className="form-login-email-input">
-            <label htmlFor="password" className="input-icon-pass">
+            <label htmlFor="password-login" className="input-icon-pass">
               <img src={password_icon} className="icon" />
             </label>
             <input
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
+              name="password"
               type={passwordShown ? "text" : "password"}
-              id="password"
+              id="password-login"
               className="input-field sm-field"
               placeholder="Masukkan sandi anda"
             />
@@ -64,7 +79,7 @@ const FormLogin: React.FC = () => {
           </Link>
         </div>
         <div className="login-btn">
-          <AuthButton type="primary" size="md">
+          <AuthButton type="submit" color="primary" size="md">
             Masuk
           </AuthButton>
         </div>

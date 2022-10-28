@@ -13,11 +13,8 @@ const Auth: React.FC = () => {
     navigate.pathname == "/auth/register"
       ? "wrapper-logo-slogan--left d-none"
       : "wrapper-logo-slogan--left";
-  console.log("rightNone", rightNone);
-  console.log("leftNone", leftNone);
 
   const test = navigate.pathname != "/auth/register";
-  console.log("test", test);
   return (
     <div className="auth-layout">
       <div className="auth-layout--left">

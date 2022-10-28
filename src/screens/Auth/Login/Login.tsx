@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FormLogin } from "../../../components";
-import ForgotPassword from "../Forgot/Forgot";
+import ForgotPassword from "./Forgot/Forgot";
+import FormLogin from "./Form-Login/Form-Login";
 import "./Login.css";
 
 const Login: React.FC = () => {

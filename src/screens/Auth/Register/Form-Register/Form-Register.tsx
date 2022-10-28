@@ -1,20 +1,52 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   cancel_show_password,
   email_icon,
+  error_icon,
   password_icon,
   person,
   show_password,
-} from "../../../assets";
-import AuthButton from "../../buttons/Auth_Buttons/AuthButton";
+} from "../../../../assets";
+import AuthButton from "../../../../components/buttons/Auth_Buttons/AuthButton";
+import { authService } from "../../../../services";
+import { RegisterRequest } from "../../../../types/Register";
 import "./Form-Register.css";
 
 const FormRegister: React.FC = () => {
+  const history = useNavigate(); //memindahkan langsung direct ke login setelah sukses
   const [password, setPassword] = useState<string>("");
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
-  const [passwordConfirm, setPasswordConfirm] = useState<string>("");
   const [passwordConfirmShown, setPasswordConfirmShown] =
     useState<boolean>(false);
+  const [isPasswordMatch, setIsPasswordMatch] = useState<boolean>();
+
+  const register = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData(e.target as HTMLFormElement);
+      const inputObject = Object.fromEntries(formData);
+
+      const register = await authService.register(
+        inputObject as any as RegisterRequest
+      );
+      console.log("register", register); //melihat data yang diambil
+      history("/auth/login");
+      alert("Registrasi Berhasil");
+    } catch (error: any) {
+      console.log("error.response", error.response);
+      alert(error.response.data.message); //menangkap error response axios & tergantung backend (maksudnya bisa aja error.response.data.message)
+    }
+  };
+
+  const isPasswordMatchCheck = (value: string) => {
+    if (value !== password) {
+      setIsPasswordMatch(false);
+    } else {
+      setIsPasswordMatch(true);
+    }
+  };
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -24,7 +56,7 @@ const FormRegister: React.FC = () => {
   };
   return (
     <div className="form-register-component">
-      <form action="">
+      <form onSubmit={(event) => register(event)}>
         <div className="form-regis-nama">
           <h1 className="input-title sm-input-title">Nama</h1>
           <div className="form-regis-input">
@@ -32,6 +64,8 @@ const FormRegister: React.FC = () => {
               <img src={person} className="icon-regis" />
             </label>
             <input
+              name="firstName" //tergantung backend
+              defaultValue="testFirstName"
               id="nama"
               type="text"
               className="input-field-regis lg-field-regis"
@@ -42,11 +76,13 @@ const FormRegister: React.FC = () => {
         <div className="form-regis-nama-pengguna mt-form">
           <h1 className="input-title sm-input-title">Nama Pengguna</h1>
           <div className="form-regis-input">
-            <label htmlFor="namaPengguna" className="input-icon-regis">
+            <label htmlFor="nama-pengguna" className="input-icon-regis">
               <img src={person} className="icon-regis" />
             </label>
             <input
-              id="namaPengguna"
+              name="lastName" //tergantung backend
+              defaultValue="testLastName"
+              id="nama-pengguna"
               type="text"
               className="input-field-regis lg-field-regis"
               placeholder="Masukkan nama pengguna"
@@ -56,28 +92,31 @@ const FormRegister: React.FC = () => {
         <div className="form-regis-email mt-form">
           <h1 className="input-title sm-input-title">Email</h1>
           <div className="form-regis-input">
-            <label htmlFor="email" className="input-icon-regis">
+            <label htmlFor="email-register" className="input-icon-regis">
               <img src={email_icon} className="icon-regis" />
             </label>
             <input
-              id="email"
+              name="email" //tergantung backend
+              defaultValue="testEmail@test.com"
+              id="email-register"
               type="email"
               className="input-field-regis lg-field-regis"
               placeholder="Masukkan nama pengguna"
             />
           </div>
         </div>
-        <div className="form-regis-email mt-form">
+        <div className="form-regis-password mt-form">
           <h1 className="input-title sm-input-title">Kata Sandi</h1>
           <div className="form-regis-input">
-            <label htmlFor="password" className="input-icon-regis">
+            <label htmlFor="password-register" className="input-icon-regis">
               <img src={password_icon} className="icon-regis" />
             </label>
             <input
+              name="password" //tergantung backend
               onChange={(e) => setPassword(e.target.value)}
-              value={password}
+              defaultValue="testPassword" //ganti jadi {password} biar jalan handle repeat password
               type={passwordShown ? "text" : "password"}
-              id="password"
+              id="password-register"
               className="input-field-regis sm-field-regis"
               placeholder="Masukkan sandi anda"
             />
@@ -88,17 +127,22 @@ const FormRegister: React.FC = () => {
             />
           </div>
         </div>
-        <div className="form-regis-email mt-form">
+        <div className="form-regis-repeat-pass mt-form">
           <h1 className="input-title sm-input-title">Konfirmasi Kata Sandi</h1>
-          <div className="form-regis-input">
-            <label htmlFor="password" className="input-icon-regis">
+          <div
+            className={`form-regis-input ${
+              isPasswordMatch == false ? "red-border" : "none"
+            }`}
+          >
+            <label htmlFor="password-repeat" className="input-icon-regis">
               <img src={password_icon} className="icon-regis" />
             </label>
             <input
-              onChange={(e) => setPasswordConfirm(e.target.value)}
-              value={passwordConfirm}
+              name="phoneNumber" //tergantung backend
+              defaultValue="testPhoneNumber"
+              onChange={(e) => isPasswordMatchCheck(e.target.value)}
               type={passwordConfirmShown ? "text" : "password"}
-              id="password"
+              id="password-repeat"
               className="input-field-regis sm-field-regis"
               placeholder="Masukkan ulang sandi anda"
             />
@@ -107,6 +151,18 @@ const FormRegister: React.FC = () => {
               className="icon icon-show-pass-regis"
               onClick={togglePasswordConfirm}
             />
+          </div>
+          <div className="register-error-massage">
+            {isPasswordMatch == false ? (
+              <div className="regis-error-output">
+                <img src={error_icon} className="icon-error" />
+                <span className="text-error">Kata sandi tidak cocok</span>
+              </div>
+            ) : (
+              <>
+                <span></span>
+              </>
+            )}
           </div>
         </div>
         <div className="form-regis-terms">
@@ -120,7 +176,7 @@ const FormRegister: React.FC = () => {
           </label>
         </div>
         <div className="register-btn">
-          <AuthButton type="primary" size="sm">
+          <AuthButton color="primary" size="sm">
             Daftar
           </AuthButton>
         </div>

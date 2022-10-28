@@ -12,6 +12,10 @@
   border-bottom: 1px solid #3186f5;
 }
 
+.red-border {
+  border-color: red;
+}
+
 .input-field-regis {
   position: relative;
   border: none;
@@ -33,7 +37,7 @@
 }
 
 .mt-form {
-  margin-top: 16px;
+  margin-top: 26px;
 }
 
 .icon-show-pass-regis {
@@ -45,7 +49,7 @@
 }
 
 .form-regis-terms {
-  margin: 33px 10px 0 0;
+  margin: 30px 10px 0 0;
   display: flex;
   gap: 12px;
   color: grey;
@@ -66,5 +70,32 @@
 }
 
 .register-btn {
-  margin: 37px 0 37px 0;
+  margin: 21px 0 37px 0;
+}
+
+.form-regis-repeat-pass {
+  position: relative;
+}
+
+.register-error-massage {
+  margin: 4px 0 0 16px;
+  position: absolute;
+}
+
+.regis-error-output {
+  position: relative;
+}
+
+.icon-error {
+  width: 13px;
+  height: 13px;
+}
+
+.text-error {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: red;
+  position: relative;
+  bottom: 3px;
+  left: 14px;
 }

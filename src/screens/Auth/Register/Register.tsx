@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FormRegister } from "../../../components";
+import FormRegister from "./Form-Register/Form-Register";
 import "./Register.css";
 
 const Register: React.FC = () => {

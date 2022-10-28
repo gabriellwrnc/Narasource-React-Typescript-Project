@@ -4,17 +4,23 @@ import "./AuthButton.css";
 export interface AuthButtonProps {
   children: React.ReactNode;
   onSubmit?: React.FormEventHandler<HTMLButtonElement>;
-  type?: "primary" | "secondary";
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  type?: "submit" | "reset" | "button";
+  color?: "primary" | "secondary";
   size?: "sm" | "md";
 }
 
 const AuthButton: React.FC<AuthButtonProps> = (props) => {
   const size = props.size || "md";
-  const type = props.type || "primary";
+  const color = props.color || "primary";
 
   return (
     <div>
-      <button className={`btn btn--size-${size} btn--type-${type}`}>
+      <button
+        type={props.type}
+        onClick={props.onClick}
+        className={`btn btn--size-${size} btn--type-${color}`}
+      >
         {props.children}
       </button>
     </div>
