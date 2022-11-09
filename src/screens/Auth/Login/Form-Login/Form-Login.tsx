@@ -9,14 +9,20 @@ import {
 import { AuthButton } from "../../../../components";
 import { authService } from "../../../../services";
 import { LoginRequest } from "../../../../types/Login";
+import ModalError from "../Modal-Error/Modal-Error";
 import "./Form-Login.css";
 
 const FormLogin: React.FC = () => {
   const navigate = useNavigate();
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
+  const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
+  };
+
+  const toggleErrorModal = () => {
+    setShowErrorModal((prevState) => !prevState);
   };
 
   const login = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,10 +34,11 @@ const FormLogin: React.FC = () => {
 
       const resp = await authService.login(inputObject as any as LoginRequest);
       console.log("resp", resp);
-      localStorage.setItem("@token", resp.data.token);
-      navigate("/dashboard/home-page"); //ganti
+      localStorage.setItem("@token", resp.data.access_token);
+      navigate("/dashboard-user/home-page"); //ganti
     } catch (error: any) {
-      alert(error.response.data.message);
+      setShowErrorModal(true);
+      console.log(error.response);
     }
   };
 
@@ -45,6 +52,7 @@ const FormLogin: React.FC = () => {
               <img src={email_icon} className="icon" />
             </label>
             <input
+              defaultValue="user@email.com"
               name="email"
               type="email"
               id="email-login"
@@ -60,6 +68,7 @@ const FormLogin: React.FC = () => {
               <img src={password_icon} className="icon" />
             </label>
             <input
+              defaultValue="User1234@"
               name="password"
               type={passwordShown ? "text" : "password"}
               id="password-login"
@@ -84,6 +93,11 @@ const FormLogin: React.FC = () => {
           </AuthButton>
         </div>
       </form>
+      {showErrorModal ? (
+        <ModalError onClose={() => toggleErrorModal()} />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

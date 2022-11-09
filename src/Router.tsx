@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Auth } from "./layouts";
-import { ForgotPassword, Login, Register } from "./screens/Auth";
+import { Auth, DashboardUser } from "./layouts";
+import { ActivityPage, HomePage, Login, Register } from "./screens";
 
 const Router: React.FC = () => {
   return (
@@ -12,10 +12,14 @@ const Router: React.FC = () => {
           <Route path="/auth/forgotPassword" element={<Login />}></Route>
         </Route>
 
-        <Route path="/dashboard" element={<h1>Dashboard</h1>}>
+        <Route path="/dashboard-user" element={<DashboardUser />}>
           <Route
-            path="/dashboard/home-page"
-            element={<h1>Home Page</h1>}
+            path="/dashboard-user/home-page"
+            element={<HomePage />}
+          ></Route>
+          <Route
+            path="/dashboard-user/activity-page"
+            element={<ActivityPage />}
           ></Route>
         </Route>
       </Routes>

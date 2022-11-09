@@ -64,8 +64,7 @@ const FormRegister: React.FC = () => {
               <img src={person} className="icon-regis" />
             </label>
             <input
-              name="firstName" //tergantung backend
-              defaultValue="testFirstName"
+              name="name" //tergantung backend
               id="nama"
               type="text"
               className="input-field-regis lg-field-regis"
@@ -80,8 +79,7 @@ const FormRegister: React.FC = () => {
               <img src={person} className="icon-regis" />
             </label>
             <input
-              name="lastName" //tergantung backend
-              defaultValue="testLastName"
+              name="username" //tergantung backend
               id="nama-pengguna"
               type="text"
               className="input-field-regis lg-field-regis"
@@ -97,7 +95,6 @@ const FormRegister: React.FC = () => {
             </label>
             <input
               name="email" //tergantung backend
-              defaultValue="testEmail@test.com"
               id="email-register"
               type="email"
               className="input-field-regis lg-field-regis"
@@ -114,7 +111,7 @@ const FormRegister: React.FC = () => {
             <input
               name="password" //tergantung backend
               onChange={(e) => setPassword(e.target.value)}
-              defaultValue="testPassword" //ganti jadi {password} biar jalan handle repeat password
+              value={password} //ganti jadi {password} biar jalan handle repeat password
               type={passwordShown ? "text" : "password"}
               id="password-register"
               className="input-field-regis sm-field-regis"
@@ -137,9 +134,7 @@ const FormRegister: React.FC = () => {
             <label htmlFor="password-repeat" className="input-icon-regis">
               <img src={password_icon} className="icon-regis" />
             </label>
-            <input
-              name="phoneNumber" //tergantung backend
-              defaultValue="testPhoneNumber"
+            <input //tergantung backend
               onChange={(e) => isPasswordMatchCheck(e.target.value)}
               type={passwordConfirmShown ? "text" : "password"}
               id="password-repeat"
@@ -159,9 +154,7 @@ const FormRegister: React.FC = () => {
                 <span className="text-error">Kata sandi tidak cocok</span>
               </div>
             ) : (
-              <>
-                <span></span>
-              </>
+              <></>
             )}
           </div>
         </div>

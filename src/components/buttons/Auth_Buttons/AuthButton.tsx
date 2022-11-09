@@ -6,7 +6,7 @@ export interface AuthButtonProps {
   onSubmit?: React.FormEventHandler<HTMLButtonElement>;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   type?: "submit" | "reset" | "button";
-  color?: "primary" | "secondary";
+  color?: "primary" | "secondary" | "transparent";
   size?: "sm" | "md";
 }
 

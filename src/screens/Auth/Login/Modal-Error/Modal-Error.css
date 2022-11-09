@@ -1,0 +1,38 @@
+.modal-error-box {
+  background-color: rgba(255, 255, 255);
+  padding: 36px 0;
+  border-radius: 15px;
+  width: 430px;
+  margin: 0;
+}
+
+.modal-error-icon {
+  width: fit-content;
+  margin: auto;
+}
+
+.modal-icon {
+  width: 87px;
+  height: 87px;
+}
+
+.modal-error-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 33px;
+}
+
+.modal-error-desc {
+  margin: 30px auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  width: 320px;
+}
+
+.modal-error-btn {
+  width: fit-content;
+  margin: auto;
+}
