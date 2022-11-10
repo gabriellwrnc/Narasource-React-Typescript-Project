@@ -1,0 +1,84 @@
+.input-title {
+  color: #3186f5;
+}
+
+.lg-input-title {
+  font-size: 22px;
+  font-weight: 500;
+}
+.sm-input-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.input-icon {
+  position: relative;
+  padding: 0 21px;
+}
+.input-icon-pass {
+  position: relative;
+  top: 5px;
+  padding: 0 21px;
+}
+
+.icon {
+  width: 17px;
+}
+
+.input-field {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.sm-field {
+  width: 200px;
+}
+
+.lg-field {
+  width: 240px;
+}
+
+.form-login-email-input {
+  width: 326px;
+  margin-top: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #3186f5;
+}
+
+.form-login-password {
+  margin-top: 42px;
+}
+
+.icon-show-pass {
+  cursor: pointer;
+  position: relative;
+  top: 8px;
+  left: 32px;
+  width: 20px;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  box-shadow: 0 0 0 30px white inset !important;
+}
+
+.login-btn {
+  margin: 28px 0 60px 0;
+}
+
+.form-login-forgot {
+  font-family: "Poppins", sans-serif;
+  text-align: end;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 17px;
+}
+
+.forgot {
+  text-decoration: none;
+  color: #3186f5;
+}

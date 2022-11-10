@@ -1,0 +1,101 @@
+.input-icon-regis {
+  position: relative;
+  padding: 0 14px;
+}
+.icon-regis {
+  font-size: 15px;
+}
+.form-regis-input {
+  width: 343px;
+  margin-top: 14px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #3186f5;
+}
+
+.red-border {
+  border-color: red;
+}
+
+.input-field-regis {
+  position: relative;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  bottom: 3px;
+}
+
+.input-field-regis:focus {
+  outline: none;
+}
+
+.sm-field-regis {
+  width: 220px;
+}
+
+.lg-field-regis {
+  width: 260px;
+}
+
+.mt-form {
+  margin-top: 26px;
+}
+
+.icon-show-pass-regis {
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+  left: 30px;
+  width: 22px;
+}
+
+.form-regis-terms {
+  margin: 30px 10px 0 0;
+  display: flex;
+  gap: 12px;
+  color: grey;
+  width: 330px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+.terms {
+  width: 16px;
+  height: 16px;
+  accent-color: #2aa302;
+}
+.terms-anchor {
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.register-btn {
+  margin: 21px 0 37px 0;
+}
+
+.form-regis-repeat-pass {
+  position: relative;
+}
+
+.register-error-massage {
+  margin: 4px 0 0 16px;
+  position: absolute;
+}
+
+.regis-error-output {
+  position: relative;
+}
+
+.icon-error {
+  width: 13px;
+  height: 13px;
+}
+
+.text-error {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: red;
+  position: relative;
+  bottom: 3px;
+  left: 14px;
+}

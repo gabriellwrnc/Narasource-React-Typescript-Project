@@ -1,0 +1,27 @@
+.modal-search-input {
+  margin: 0 auto;
+  width: 314px;
+  border-bottom: 2px solid white;
+  margin-bottom: 15px;
+  padding: 0 0 14px 2px;
+  color: #ffff;
+  display: flex;
+  flex-direction: row;
+  gap: 58px;
+}
+.modal-search-field {
+  border: none;
+  background-color: transparent;
+  color: #ffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.modal-search-field::placeholder {
+  color: #ffff;
+}
+
+.modal-search-icon {
+  font-size: 24px;
+}
