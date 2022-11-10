@@ -1,5 +1,8 @@
 .content-box {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: aqua;
+  position: relative;
+  overflow: hidden;
+  display: flex;
   width: 177px;
   height: 135px;
   border-radius: 20px;
@@ -7,8 +10,64 @@
   color: white;
 }
 
+.mobile-img {
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/assets/image/mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.frontend-img {
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/assets/image/frontend.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.uiux-img {
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/assets/image/uiux.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.backend-img {
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/assets/image/backend.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mobile-img::before,
+.frontend-img::before,
+.uiux-img::before,
+.backend-img::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.content-box:hover .mobile-img,
+.content-box:focus .mobile-img,
+.content-box:hover .frontend-img,
+.content-box:focus .frontend-img,
+.content-box:hover .uiux-img,
+.content-box:focus .uiux-img,
+.content-box:hover .backend-img,
+.content-box:focus .backend-img {
+  transform: scale(1.2);
+  transition: all 1s;
+}
+
 .box-content {
-  position: relative;
+  position: absolute;
   padding: 20px 0 15px 16px;
 }
 

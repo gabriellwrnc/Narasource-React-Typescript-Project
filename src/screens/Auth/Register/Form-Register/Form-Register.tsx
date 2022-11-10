@@ -20,6 +20,7 @@ const FormRegister: React.FC = () => {
   const [passwordConfirmShown, setPasswordConfirmShown] =
     useState<boolean>(false);
   const [isPasswordMatch, setIsPasswordMatch] = useState<boolean>();
+  const [isEmailMatch, setIsEmailMatch] = useState<boolean>();
 
   const register = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,8 +36,11 @@ const FormRegister: React.FC = () => {
       history("/auth/login");
       alert("Registrasi Berhasil");
     } catch (error: any) {
+      if (error.response.data.message == "Email already exist") {
+        setIsEmailMatch(false);
+      }
       console.log("error.response", error.response);
-      alert(error.response.data.message); //menangkap error response axios & tergantung backend (maksudnya bisa aja error.response.data.message)
+      // alert(error.response.data.message); //menangkap error response axios & tergantung backend (maksudnya bisa aja error.response.data.message)
     }
   };
 
@@ -89,7 +93,11 @@ const FormRegister: React.FC = () => {
         </div>
         <div className="form-regis-email mt-form">
           <h1 className="input-title sm-input-title">Email</h1>
-          <div className="form-regis-input">
+          <div
+            className={`form-regis-input ${
+              isEmailMatch == false ? "red-border" : "none"
+            }`}
+          >
             <label htmlFor="email-register" className="input-icon-regis">
               <img src={email_icon} className="icon-regis" />
             </label>
@@ -100,6 +108,16 @@ const FormRegister: React.FC = () => {
               className="input-field-regis lg-field-regis"
               placeholder="Masukkan nama pengguna"
             />
+          </div>
+          <div className="register-error-massage">
+            {isEmailMatch == false ? (
+              <div className="regis-error-output">
+                <img src={error_icon} className="icon-error" />
+                <span className="text-error">Email Sudah Terdaftar</span>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
         <div className="form-regis-password mt-form">

@@ -3,6 +3,7 @@ import { CircledButton, ContentCard } from "../../../../components";
 import "./Home-Page.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import ModalSearch from "./ModalSearch/ModalSearch";
+import { illustration_img } from "../../../../assets";
 
 const HomePage: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -13,6 +14,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-page-wrapper">
       <div className="home-page-illustration">
+        <div className="illustration-img"></div>
         <div className="illustration-text">
           <p>
             Wawancara <br />
@@ -30,10 +32,10 @@ const HomePage: React.FC = () => {
         </div>
       </div>
       <div className="home-page-content">
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
+        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
+        <ContentCard judul="Frontend" kategori="Teknologi" gambar="frontend" />
+        <ContentCard judul="Backend" kategori="Teknologi" gambar="backend" />
+        <ContentCard judul="Mobile" kategori="Teknologi" gambar="mobile" />
         <div className="content-box-next">
           <i className="fa-solid fa-arrow-right arrow-next"></i>
         </div>

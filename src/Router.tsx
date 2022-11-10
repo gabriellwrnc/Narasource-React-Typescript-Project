@@ -1,9 +1,19 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Auth, DashboardUser } from "./layouts";
 import { ActivityPage, HomePage, Login, Register } from "./screens";
 
 const Router: React.FC = () => {
-  return (
+  const [loading, setLoading] = useState<boolean>(true);
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    setTimeout(() => {
+      preloader.style.display = "none";
+      setLoading(false);
+    }, 2000);
+  }
+
+  return loading == false ? (
     <BrowserRouter>
       <Routes>
         <Route path="/auth" element={<Auth />}>
@@ -24,6 +34,8 @@ const Router: React.FC = () => {
         </Route>
       </Routes>
     </BrowserRouter>
+  ) : (
+    <></>
   );
 };
 

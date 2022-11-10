@@ -1,4 +1,8 @@
 export { default as logo } from "./Logo.svg"
+export { default as icon_berlangsung } from "./iconBerlangsung.svg"
+export { default as illustration_img } from "./image/illustration.jpg"
+export { default as icon_gagal } from "./iconGagal.svg"
+export { default as icon_sukses } from "./iconSukses.svg"
 export { default as logo_side_bar } from "./logoSideBar.svg"
 export { default as error_icon } from "./error.svg"
 export { default as person } from "./person.svg"
