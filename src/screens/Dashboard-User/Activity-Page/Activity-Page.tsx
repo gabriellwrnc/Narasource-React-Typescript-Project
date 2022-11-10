@@ -13,7 +13,7 @@ const ActivityPage: React.FC = () => {
           </CircledButton>
         </div>
         <div className="activity-sorting-btn">
-          <div className=" sorting-active">
+          <div className="sorting-active">
             <span className="info-color ">Berlangsung</span>
           </div>
           <div className="sorting-btn-option">

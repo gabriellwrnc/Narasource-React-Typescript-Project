@@ -24,7 +24,14 @@ const HomePage: React.FC = () => {
         </div>
       </div>
       <div className="home-page-action">
-        <div className="action-popular-btn"></div>
+        <div className="action-popular-btn">
+          <div className="popular-btn-option">
+            <span className="popular-active">Popular</span>
+          </div>
+          <div className="popular-btn-option">
+            <span className="primary-color">A - Z</span>
+          </div>
+        </div>
         <div className="action-search-btn" onClick={() => toggleModal()}>
           <CircledButton>
             <AiOutlineSearch className="circled-icon" />

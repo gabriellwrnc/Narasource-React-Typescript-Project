@@ -44,17 +44,40 @@
 }
 
 .action-popular-btn {
+  display: flex;
+  align-items: center;
   margin: auto;
-  width: 241px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  width: 292px;
   height: 42px;
-  border: 1px solid #3186f5;
+  border: 3px solid #3186f5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
+}
+
+.popular-btn-option {
+  width: 146px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .action-search-btn {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.popular-active {
+  width: 146px;
+  height: 42px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #f5f5f5;
+  background-color: #3186f5;
 }
 
 .home-page-content {
