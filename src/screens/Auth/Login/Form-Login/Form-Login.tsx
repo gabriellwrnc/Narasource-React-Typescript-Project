@@ -52,7 +52,6 @@ const FormLogin: React.FC = () => {
               <img src={email_icon} className="icon" />
             </label>
             <input
-              defaultValue="user@email.com"
               name="email"
               type="email"
               id="email-login"
@@ -68,7 +67,6 @@ const FormLogin: React.FC = () => {
               <img src={password_icon} className="icon" />
             </label>
             <input
-              defaultValue="User1234@"
               name="password"
               type={passwordShown ? "text" : "password"}
               id="password-login"
