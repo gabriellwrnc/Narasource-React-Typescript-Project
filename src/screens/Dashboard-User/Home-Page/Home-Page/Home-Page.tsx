@@ -47,7 +47,14 @@ const HomePage: React.FC = () => {
           <i className="fa-solid fa-arrow-right arrow-next"></i>
         </div>
       </div>
-      {showModal ? <ModalSearch onClose={() => toggleModal()} /> : <></>}
+      {showModal ? (
+        <ModalSearch
+          link="/dashboard-user/home-page/result-page"
+          onClose={() => toggleModal()}
+        />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

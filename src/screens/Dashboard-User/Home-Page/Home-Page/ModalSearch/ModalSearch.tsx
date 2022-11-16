@@ -1,10 +1,12 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { AuthButton, Modal } from "../../../../../components";
 import "./ModalSearch.css";
 
 interface SearchModalProps {
-  onClose: () => void;
+  onClose?: () => void;
+  link: string;
 }
 
 const ModalSearch: React.FC<SearchModalProps> = (props) => {
@@ -26,13 +28,11 @@ const ModalSearch: React.FC<SearchModalProps> = (props) => {
             ></input>
           </div>
         </div>
-        <AuthButton
-          onClick={() => props.onClose()}
-          color="transparent"
-          size="sm"
-        >
-          Cari
-        </AuthButton>
+        <Link to={props.link}>
+          <AuthButton color="transparent" size="sm">
+            Cari
+          </AuthButton>
+        </Link>
       </div>
     </Modal>
   );

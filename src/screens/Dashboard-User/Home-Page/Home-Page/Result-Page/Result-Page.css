@@ -1,0 +1,11 @@
+.result-page-action {
+  position: relative;
+}
+
+.result-page-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 54px;
+  column-gap: 46px;
+  row-gap: 46px;
+}

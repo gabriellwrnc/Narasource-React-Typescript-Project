@@ -21,7 +21,7 @@
   grid-area: header;
 }
 .dashboard-outlet {
-  margin-top: 35px;
+  padding: 35px 100px;
   grid-area: content;
 }
 
@@ -129,8 +129,4 @@
   flex-direction: row;
   align-items: center;
   gap: 7px;
-}
-
-.dashboard-outlet {
-  margin: 35px 100px;
 }
