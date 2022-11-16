@@ -1,15 +1,17 @@
 import React from "react";
 import "./Content-Card.css";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export interface ContentCardsProps {
   judul: string;
   kategori: string;
+  link: string;
   gambar: "mobile" | "frontend" | "backend" | "UI/UX";
 }
 
 const ContentCards: React.FC<ContentCardsProps> = (props) => {
-  const { judul, kategori, gambar } = props;
+  const { judul, kategori, gambar, link } = props;
   var class_img;
 
   if (gambar == "frontend") {
@@ -33,10 +35,12 @@ const ContentCards: React.FC<ContentCardsProps> = (props) => {
           <div className="content-box-kategori">
             <p>{kategori}</p>
           </div>
-          <button className="content-box-detail">
-            <span>Selengkapnya</span>
-            <FiArrowRight className="content-box-arrow" />
-          </button>
+          <Link to={link}>
+            <button className="content-box-detail">
+              <span>Selengkapnya</span>
+              <FiArrowRight className="content-box-arrow" />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

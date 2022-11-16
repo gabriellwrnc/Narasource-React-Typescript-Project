@@ -1,0 +1,84 @@
+.article-page-layout {
+  width: 840px;
+}
+
+.article-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.article-category {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: #3186f5;
+  margin-bottom: 18px;
+}
+
+.article-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 181px;
+  height: 38px;
+  background: #d9d9d9;
+  border-radius: 20px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 17px;
+  color: #7d7d7d;
+}
+
+.desc-admin {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  color: #7d7d7d;
+}
+
+.admin-by {
+  color: #3186f5;
+}
+
+.article-desc-left {
+  display: flex;
+  column-gap: 11px;
+  align-items: center;
+}
+
+.article-desc-right {
+  display: flex;
+  column-gap: 5px;
+}
+
+.article-content {
+  padding-top: 22px;
+}
+
+.article-img {
+  width: 100%;
+}
+
+.content-text {
+  padding-top: 24px;
+  font-family: "Poppins";
+  line-height: 60px;
+  font-size: 15px;
+}
+
+.text-title {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.text-paragraf {
+  line-height: 40px;
+}

@@ -40,6 +40,7 @@ const FormLogin: React.FC = () => {
       setShowErrorModal(true);
       console.log(error.response);
     }
+    // console.log("login");
   };
 
   return (

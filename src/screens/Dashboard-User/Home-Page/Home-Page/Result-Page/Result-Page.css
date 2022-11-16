@@ -1,11 +1,13 @@
 .result-page-action {
   position: relative;
+  /* margin-right: 90px; */
 }
 
 .result-page-content {
+  width: 860px;
   display: flex;
   flex-wrap: wrap;
   margin-top: 54px;
-  column-gap: 46px;
-  row-gap: 46px;
+  column-gap: 50px;
+  row-gap: 50px;
 }

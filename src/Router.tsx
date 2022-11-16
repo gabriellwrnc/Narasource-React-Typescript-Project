@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Auth, DashboardUser } from "./layouts";
-import { ActivityPage, HomePage, Login, Register, ResultPage } from "./screens";
+import {
+  ActivityPage,
+  ArticlePage,
+  HomePage,
+  Login,
+  Register,
+  ResultPage,
+} from "./screens";
 
 const Router: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -30,6 +37,10 @@ const Router: React.FC = () => {
           <Route
             path="/dashboard-user/home-page/result-page"
             element={<ResultPage />}
+          ></Route>
+          <Route
+            path="/dashboard-user/home-page/article-page"
+            element={<ArticlePage />}
           ></Route>
           <Route
             path="/dashboard-user/activity-page"

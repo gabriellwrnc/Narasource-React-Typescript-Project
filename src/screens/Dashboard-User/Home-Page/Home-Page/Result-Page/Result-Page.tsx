@@ -35,17 +35,102 @@ const ResultPage: React.FC = () => {
         <></>
       )}
       <div className="result-page-content">
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
       </div>
     </div>
   );

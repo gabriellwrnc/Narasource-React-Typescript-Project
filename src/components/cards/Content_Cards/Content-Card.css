@@ -83,6 +83,7 @@
 }
 
 .content-box-detail {
+  cursor: pointer;
   position: absolute;
   top: 88px;
   display: flex;

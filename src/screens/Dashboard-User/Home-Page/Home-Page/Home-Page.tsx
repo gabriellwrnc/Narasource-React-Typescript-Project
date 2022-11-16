@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
       <div className="home-page-action">
         <div className="action-popular-btn">
           <div className="popular-btn-option">
-            <span className="popular-active">Popular</span>
+            <span className="popular-active ">Popular</span>
           </div>
           <div className="popular-btn-option">
             <span className="primary-color">A - Z</span>
@@ -39,10 +39,30 @@ const HomePage: React.FC = () => {
         </div>
       </div>
       <div className="home-page-content">
-        <ContentCard judul="UI/UX" kategori="Teknologi" gambar="UI/UX" />
-        <ContentCard judul="Frontend" kategori="Teknologi" gambar="frontend" />
-        <ContentCard judul="Backend" kategori="Teknologi" gambar="backend" />
-        <ContentCard judul="Mobile" kategori="Teknologi" gambar="mobile" />
+        <ContentCard
+          judul="UI/UX"
+          kategori="Teknologi"
+          gambar="UI/UX"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="Frontend"
+          kategori="Teknologi"
+          gambar="frontend"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="Backend"
+          kategori="Teknologi"
+          gambar="backend"
+          link="/dashboard-user/home-page/article-page"
+        />
+        <ContentCard
+          judul="Mobile"
+          kategori="Teknologi"
+          gambar="mobile"
+          link="/dashboard-user/home-page/article-page"
+        />
         <div className="content-box-next">
           <i className="fa-solid fa-arrow-right arrow-next"></i>
         </div>
