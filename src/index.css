@@ -133,7 +133,7 @@ table {
   border-spacing: 0;
 }
 
-/* .preloader {
+.preloader {
   background-color: #3186f5;
   position: fixed;
   left: 0;
@@ -148,4 +148,4 @@ table {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-} */
+}
