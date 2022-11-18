@@ -27,10 +27,12 @@ const ResultPage: React.FC = () => {
         </div>
       </div>
       {showModal ? (
-        <ModalSearch
-          link="/dashboard-user/home-page/result-page"
-          onClose={() => toggleModal()}
-        />
+        <div className="modal-search-result">
+          <ModalSearch
+            link="/dashboard-user/home-page/result-page"
+            onClose={() => toggleModal()}
+          />
+        </div>
       ) : (
         <></>
       )}

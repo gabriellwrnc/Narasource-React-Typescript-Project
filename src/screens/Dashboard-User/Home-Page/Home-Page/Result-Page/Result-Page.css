@@ -11,3 +11,8 @@
   column-gap: 50px;
   row-gap: 50px;
 }
+
+.modal-search-result {
+  position: relative;
+  z-index: 10;
+}

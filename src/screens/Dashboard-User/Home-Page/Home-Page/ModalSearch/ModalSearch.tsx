@@ -1,15 +1,17 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { close_white } from "../../../../../assets";
 import { AuthButton, Modal } from "../../../../../components";
 import "./ModalSearch.css";
 
 interface SearchModalProps {
-  onClose?: () => void;
+  onClose: () => void;
   link: string;
 }
 
 const ModalSearch: React.FC<SearchModalProps> = (props) => {
+  const { onClose } = props;
   return (
     <Modal>
       <div className="modal-search-wrapper">
@@ -33,6 +35,9 @@ const ModalSearch: React.FC<SearchModalProps> = (props) => {
             Cari
           </AuthButton>
         </Link>
+        <div className="close-button" onClick={() => onClose()}>
+          <img src={close_white} alt="close button" />
+        </div>
       </div>
     </Modal>
   );

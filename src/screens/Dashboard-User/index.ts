@@ -3,3 +3,4 @@ export {default as ModalSearch} from "./Home-Page/Home-Page/ModalSearch/ModalSea
 export {default as ActivityPage} from "./Activity-Page/Activity-Page"
 export {default as ResultPage} from "./Home-Page/Home-Page/Result-Page/Result-Page"
 export {default as ArticlePage} from "./Home-Page/Home-Page/Article-Page/Article-Page"
+export {default as MencariNarasumberPage} from "./Mencari-Narasumber-Page/Mencari-Narasumber-Page"

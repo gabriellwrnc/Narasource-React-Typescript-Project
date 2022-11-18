@@ -6,6 +6,7 @@ import {
   ArticlePage,
   HomePage,
   Login,
+  MencariNarasumberPage,
   Register,
   ResultPage,
 } from "./screens";
@@ -45,6 +46,10 @@ const Router: React.FC = () => {
           <Route
             path="/dashboard-user/activity-page"
             element={<ActivityPage />}
+          ></Route>
+          <Route
+            path="/dashboard-user/mencari-narasumber/1"
+            element={<MencariNarasumberPage />}
           ></Route>
         </Route>
       </Routes>

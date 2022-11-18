@@ -1,0 +1,96 @@
+.mencari-narasumber-wrapper {
+  display: grid;
+  grid-template-areas: "left right";
+  grid-template-columns: 5fr 5fr;
+  height: 100%;
+}
+
+.mencari-left {
+  margin-top: -50px;
+  grid-area: left;
+  display: flex;
+  column-gap: 53px;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-number {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 175px;
+  color: #3186f5;
+}
+
+.left-desc-title {
+  font-family: "Reem Kufi";
+  font-weight: 500;
+  font-size: 20px;
+  color: #3186f5;
+  margin-bottom: 10px;
+}
+
+.left-desc-desc {
+  width: 214px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.mencari-right {
+  grid-area: right;
+}
+
+.mencari-input-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.mencari-input-label {
+  font-family: "Reem Kufi";
+  font-weight: 500;
+  font-size: 20px;
+  color: #3186f5;
+}
+
+.mencari-input-field {
+  border: 2px solid #abaaaa;
+  border-radius: 5px;
+  padding: 12px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.number-field {
+  width: 220px;
+  font-size: 20px;
+  border: 2px solid #abaaaa;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+.input-button {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+.mencari-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 78px;
+  height: 40px;
+  background-color: #3186f5;
+  border-radius: 20px;
+  font-family: "Reem Kufi";
+  font-weight: 500;
+  font-size: 20px;
+  color: #f5f5f5;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dashboard-user.css";
 import { Outlet, useLocation } from "react-router";
 import {
@@ -6,15 +6,29 @@ import {
   arrow_profile,
   arrow_right_header,
   logo_side_bar,
+  notif,
+  notif_filled,
   side_bar_aktivitas,
   side_bar_aktivitas_active,
   side_bar_home,
   side_bar_home_active,
 } from "../../assets";
 import { Link } from "react-router-dom";
+import NotifPopUp from "./Notif-PopUp/NotifPopUp";
 
 const DashboardUser: React.FC = () => {
   const navigate = useLocation();
+  const [showNotif, setShowNotif] = useState<boolean>(false);
+  const toggleNotif = () => {
+    setShowNotif((prevState) => !prevState);
+  };
+
+  let n;
+  if (navigate.pathname.includes("/dashboard-user/home-page")) {
+    n = true;
+  } else {
+    n = false;
+  }
   return (
     <div className="dashboard-user-layout">
       <div className="dashboard-side-bar">
@@ -25,17 +39,11 @@ const DashboardUser: React.FC = () => {
           <Link to="/dashboard-user/home-page" className="link-dashboard">
             <div
               className={`dashboard-side-bar-logo ${
-                navigate.pathname === "/dashboard-user/home-page"
-                  ? "active-side-bar"
-                  : ""
+                n ? "active-side-bar" : ""
               }`}
             >
               <img
-                src={
-                  navigate.pathname === "/dashboard-user/home-page"
-                    ? side_bar_home_active
-                    : side_bar_home
-                }
+                src={n ? side_bar_home_active : side_bar_home}
                 className="side-bar-content-logo"
               />
             </div>
@@ -72,6 +80,12 @@ const DashboardUser: React.FC = () => {
           </div>
         </div>
         <div className="dashboard-header-right">
+          <div className="header-notif" onClick={() => toggleNotif()}>
+            <img
+              src={showNotif ? notif_filled : notif}
+              className="notif-icon"
+            />
+          </div>
           <div className="header-profile">
             <div className="profile-pic"></div>
             <div className="profile-name">Mushonnef</div>
@@ -84,6 +98,7 @@ const DashboardUser: React.FC = () => {
       <div className="dashboard-outlet">
         <Outlet />
       </div>
+      {showNotif ? <NotifPopUp /> : <></>}
     </div>
   );
 };
