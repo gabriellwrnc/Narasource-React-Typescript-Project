@@ -6,6 +6,7 @@
 
 :root {
   font-size: 62.2%;
+  overflow: hidden;
 }
 
 html,

@@ -1,0 +1,109 @@
+.edit-profile-wrapper {
+  display: flex;
+  gap: 96px;
+  align-items: center;
+  justify-content: center;
+  margin-top: -70px;
+  height: 100%;
+}
+
+.edit-profile-pic-wrapper {
+  position: relative;
+}
+
+.edit-profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.edit-profile-pic {
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+}
+
+.edit-profile-change-pic {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 100%;
+  box-shadow: 0px 3.22581px 3.22581px rgba(0, 0, 0, 0.25);
+}
+
+.edit-profile-form-wrapper {
+  width: 343px;
+}
+
+.edit-profile-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 9px;
+  width: inherit;
+  border-bottom: 1px solid #3186f5;
+  margin-bottom: 20px;
+}
+.edit-profile-input-label {
+  font-family: "Reem Kufi";
+  font-weight: 500;
+  font-size: 18px;
+  color: #3186f5;
+}
+
+.edit-profile-input-radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  width: inherit;
+  margin-bottom: 20px;
+}
+
+.edit-profile-input-field {
+  border: none;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px 5px;
+}
+
+.edit-profile-input-field:focus {
+  outline: none;
+}
+
+.edit-radio-wrapper {
+  display: flex;
+  gap: 48px;
+}
+
+.radio-option {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.radio-field {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.radio-value {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #abaaaa;
+}
+
+.edit-profile-btn {
+  width: inherit;
+  margin-top: 40px;
+}

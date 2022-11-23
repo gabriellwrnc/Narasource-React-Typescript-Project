@@ -23,6 +23,7 @@
   align-items: center;
   padding: 0 120px;
   grid-area: header;
+  z-index: 1;
 }
 .dashboard-outlet {
   overflow-y: scroll;
@@ -30,6 +31,11 @@
   padding-top: 35px;
   padding-left: 100px;
   padding-right: 90px;
+  grid-area: content;
+}
+
+.dashboard-outlet-user {
+  overflow: hidden;
   grid-area: content;
 }
 
@@ -161,4 +167,9 @@
 .dashboard-header-right {
   display: flex;
   gap: 20px;
+}
+
+.profile-link {
+  text-decoration: none;
+  color: black;
 }

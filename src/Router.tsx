@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Auth, DashboardUser } from "./layouts";
+import { Auth, DashboardUser, ProfileUser } from "./layouts";
 import {
   ActivityPage,
+  AkunSaya,
   ArticlePage,
+  EditProfile,
+  GantiSandi,
   HomePage,
   Login,
   MencariNarasumberPage,
@@ -51,6 +54,20 @@ const Router: React.FC = () => {
             path="/dashboard-user/mencari-narasumber/1"
             element={<MencariNarasumberPage />}
           ></Route>
+          <Route path="/dashboard-user/profil-user" element={<ProfileUser />}>
+            <Route
+              path="/dashboard-user/profil-user/akun"
+              element={<AkunSaya />}
+            ></Route>
+            <Route
+              path="/dashboard-user/profil-user/edit"
+              element={<EditProfile />}
+            ></Route>
+            <Route
+              path="/dashboard-user/profil-user/reset"
+              element={<GantiSandi />}
+            ></Route>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

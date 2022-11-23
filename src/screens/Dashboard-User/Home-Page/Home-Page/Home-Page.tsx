@@ -98,7 +98,7 @@ const HomePage: React.FC = () => {
           <i className="fa-solid fa-arrow-right arrow-next"></i>
         </div>
       </div>
-      <Link to={"/dashboard-user/mencari-narasumber/1"}>
+      <Link to={"/dashboard-user/mencari-narasumber/1"} className="btn-mencari">
         <div className="button-mulai-mencari">
           <img
             src={mencari_narasumber}

@@ -23,12 +23,20 @@ const DashboardUser: React.FC = () => {
     setShowNotif((prevState) => !prevState);
   };
 
+  let outletUser;
+  if (navigate.pathname.includes("/dashboard-user/profil-user")) {
+    outletUser = true;
+  } else {
+    outletUser = false;
+  }
+
   let n;
   if (navigate.pathname.includes("/dashboard-user/home-page")) {
     n = true;
   } else {
     n = false;
   }
+
   return (
     <div className="dashboard-user-layout">
       <div className="dashboard-side-bar">
@@ -86,16 +94,22 @@ const DashboardUser: React.FC = () => {
               className="notif-icon"
             />
           </div>
-          <div className="header-profile">
-            <div className="profile-pic"></div>
-            <div className="profile-name">Mushonnef</div>
-            <div className="profile-arrow">
-              <img src={arrow_profile} />
+          <Link to="/dashboard-user/profil-user/akun" className="profile-link">
+            <div className="header-profile">
+              <div className="profile-pic"></div>
+              <div className="profile-name">Mushonnef</div>
+              <div className="profile-arrow">
+                <img src={arrow_profile} />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
-      <div className="dashboard-outlet">
+      <div
+        className={`${
+          outletUser ? "dashboard-outlet-user" : "dashboard-outlet"
+        }`}
+      >
         <Outlet />
       </div>
       {showNotif ? <NotifPopUp /> : <></>}

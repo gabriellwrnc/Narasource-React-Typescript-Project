@@ -1,0 +1,57 @@
+.ganti-sandi-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -70px;
+  height: 100%;
+}
+
+.ganti-sandi-form-wrapper {
+  width: 343px;
+}
+
+.ganti-sandi-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 9px;
+  width: inherit;
+  border-bottom: 1px solid #3186f5;
+  margin-bottom: 26px;
+}
+
+.ganti-sandi-input-label {
+  font-family: "Reem Kufi";
+  font-weight: 500;
+  font-size: 18px;
+  color: #3186f5;
+}
+
+.ganti-sandi-input-field {
+  border: none;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px 5px;
+}
+
+.ganti-sandi-input-field:focus {
+  outline: none;
+}
+
+.ganti-sandi-input-field-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.icon-show-pass-ganti {
+  cursor: pointer;
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+  width: 20px;
+}
+
+.ganti-sandi-btn {
+  margin-top: 40px;
+}

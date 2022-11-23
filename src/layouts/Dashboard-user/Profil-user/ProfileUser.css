@@ -1,0 +1,96 @@
+.profile-user-layout {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: "top bottom";
+  grid-template-columns: 3fr 7fr;
+  height: 100vh;
+}
+
+.profile-user-layout-close {
+  grid-template-columns: 87px 15fr;
+}
+
+.profile-sidebar {
+  position: relative;
+  background: #f5f5f5;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  padding-top: 30px;
+  grid-area: top;
+}
+
+.profile-sidebar-header {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-outlet {
+  grid-area: bottom;
+}
+
+.sidebar-header-title {
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  cursor: default;
+}
+
+.profile-close {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.sidebar-content {
+  margin-top: 29px;
+}
+
+.sidebar-content-value {
+  position: relative;
+  background: inherit;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.link-profile-sidebar {
+  text-decoration: none;
+}
+
+.profile-sidebar-active {
+  background-color: #d9d9d9;
+}
+
+.profile-icon-akun {
+  margin-left: 30px;
+  width: 28px;
+  height: 28px;
+}
+
+.profile-icon-arrow {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+}
+
+.value-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  color: #3186f5;
+  margin-left: 35px;
+}
+
+.hamburber-postion {
+  right: 24px;
+  margin-bottom: 100px;
+}
+
+.sidebar-close {
+  margin-bottom: 55px;
+}
