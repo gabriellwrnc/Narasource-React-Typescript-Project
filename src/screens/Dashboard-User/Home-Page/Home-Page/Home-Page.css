@@ -80,6 +80,11 @@
   align-items: center;
   color: #f5f5f5;
   background-color: #3186f5;
+  transition: all 0.4s ease-in-out;
+}
+
+.popular-active {
+  transition: all 0.4s ease;
 }
 
 .home-page-content {

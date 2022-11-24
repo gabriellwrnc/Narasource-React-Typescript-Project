@@ -11,6 +11,7 @@ import {
 import AuthButton from "../../../../components/buttons/Auth_Buttons/AuthButton";
 import { authService } from "../../../../services";
 import { RegisterRequest } from "../../../../types/Register";
+import ModalSuccess from "../Modal-Succes/ModalSuccess";
 import "./Form-Register.css";
 
 const FormRegister: React.FC = () => {
@@ -21,6 +22,7 @@ const FormRegister: React.FC = () => {
     useState<boolean>(false);
   const [isPasswordMatch, setIsPasswordMatch] = useState<boolean>();
   const [isEmailMatch, setIsEmailMatch] = useState<boolean>();
+  const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
 
   const register = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,8 +35,7 @@ const FormRegister: React.FC = () => {
         inputObject as any as RegisterRequest
       );
       console.log("register", register); //melihat data yang diambil
-      history("/auth/login");
-      alert("Registrasi Berhasil");
+      setShowSuccessModal(true);
     } catch (error: any) {
       if (error.response.data.message == "Email already exist") {
         setIsEmailMatch(false);
@@ -50,6 +51,11 @@ const FormRegister: React.FC = () => {
     } else {
       setIsPasswordMatch(true);
     }
+  };
+
+  const toggleSuccessModal = () => {
+    history("/auth/login");
+    setShowSuccessModal((prevState) => !prevState);
   };
 
   const togglePassword = () => {
@@ -177,7 +183,7 @@ const FormRegister: React.FC = () => {
           </div>
         </div>
         <div className="form-regis-terms">
-          <input type="checkbox" id="terms" className="terms" />
+          <input type="checkbox" id="terms" className="custom-checkbox" />
           <label htmlFor="terms">
             Saya telah membaca dan menyetujui{" "}
             <a href="" className="terms-anchor">
@@ -192,6 +198,11 @@ const FormRegister: React.FC = () => {
           </AuthButton>
         </div>
       </form>
+      {showSuccessModal ? (
+        <ModalSuccess onClose={() => toggleSuccessModal()} />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

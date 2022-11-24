@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   frontend,
   icon_petunjuk,
@@ -20,15 +21,15 @@ const AkunSaya: React.FC = () => {
       </div>
       <span className="akun-saya-nama">Mushonnef Anwar</span>
       <span className="akun-saya-total">Total Wawancara : 7</span>
-      <div
-        className="akun-saya-btn-daftar"
-        onClick={() => {
-          alert("Menjadi Narasumber button clicked");
-        }}
+      <Link
+        to="/dashboard-user/profil-user/menjadi-narasumber"
+        className="profile-link"
       >
-        <img src={menjadi_narasumber} alt="icon menjadi narasumber" />
-        <span className="akun-saya-btn-desc">Menjadi Narasumber</span>
-      </div>
+        <div className="akun-saya-btn-daftar">
+          <img src={menjadi_narasumber} alt="icon menjadi narasumber" />
+          <span className="akun-saya-btn-desc">Menjadi Narasumber</span>
+        </div>
+      </Link>
       <div className="akun-saya-option-container">
         <div className="akun-saya-option">
           <div

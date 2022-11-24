@@ -10,6 +10,7 @@ import {
   HomePage,
   Login,
   MencariNarasumberPage,
+  MenjadiNarasumber,
   Register,
   ResultPage,
 } from "./screens";
@@ -66,6 +67,10 @@ const Router: React.FC = () => {
             <Route
               path="/dashboard-user/profil-user/reset"
               element={<GantiSandi />}
+            ></Route>
+            <Route
+              path="/dashboard-user/profil-user/menjadi-narasumber"
+              element={<MenjadiNarasumber />}
             ></Route>
           </Route>
         </Route>

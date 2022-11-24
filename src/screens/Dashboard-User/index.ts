@@ -7,3 +7,4 @@ export {default as MencariNarasumberPage} from "./Mencari-Narasumber-Page/Mencar
 export {default as AkunSaya} from "./Profile-Outlet/Akun-Saya/AkunSaya"
 export {default as EditProfile} from "./Profile-Outlet/Edit-Profile/EditProfile"
 export {default as GantiSandi} from "./Profile-Outlet/Ganti-Sandi/GantiSandi"
+export {default as MenjadiNarasumber} from "./Profile-Outlet/Menjadi-Narasumber/MenjadiNarasumber"

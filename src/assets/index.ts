@@ -37,6 +37,7 @@ export { default as icon_syarat } from "./iconSyarat.svg"
 export { default as menjadi_narasumber } from "./menjadiNarasumber.svg"
 export { default as change_pic } from "./changePic.svg"
 export { default as hamburber } from "./hamburger.svg"
+export { default as success_icon } from "./Sukses.svg"
 
 
 
