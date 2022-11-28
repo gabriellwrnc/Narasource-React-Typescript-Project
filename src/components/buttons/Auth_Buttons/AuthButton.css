@@ -5,11 +5,6 @@
   cursor: pointer;
 }
 
-.btn:hover {
-  opacity: 80%;
-  transition: 0.2s;
-}
-
 .btn--size-md {
   width: 326px;
   height: 48px;
@@ -31,4 +26,10 @@
   background-color: transparent;
   border: 2px solid white;
   color: #ffff;
+}
+
+.btn--type-disable {
+  background-color: #84b9ff;
+  color: #ffff;
+  cursor: not-allowed;
 }

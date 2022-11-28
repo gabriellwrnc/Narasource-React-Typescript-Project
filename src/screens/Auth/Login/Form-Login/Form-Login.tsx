@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   cancel_show_password,
@@ -14,8 +14,30 @@ import "./Form-Login.css";
 
 const FormLogin: React.FC = () => {
   const navigate = useNavigate();
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [btnDisable, setBtnDisable] = useState<boolean>(true);
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
   const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setData({
+      ...data,
+      [e.target.name]: value,
+    });
+  };
+
+  const btnDisablbeFn = () => {
+    if (data.email.length > 0 && data.password.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -43,6 +65,12 @@ const FormLogin: React.FC = () => {
     // console.log("login");
   };
 
+  useEffect(() => {
+    const state = btnDisablbeFn();
+    setBtnDisable(state);
+    console.log("render");
+  }, [data.email.length, data.password.length]);
+
   return (
     <div className="form-login-component">
       <form onSubmit={(event) => login(event)}>
@@ -56,6 +84,7 @@ const FormLogin: React.FC = () => {
               name="email"
               type="email"
               id="email-login"
+              onChange={(e) => handleChange(e)}
               className="input-field lg-field"
               placeholder="Masukkan email anda"
             />
@@ -69,8 +98,9 @@ const FormLogin: React.FC = () => {
             </label>
             <input
               name="password"
-              type={passwordShown ? "text" : "password"}
               id="password-login"
+              type={passwordShown ? "text" : "password"}
+              onChange={(e) => handleChange(e)}
               className="input-field sm-field"
               placeholder="Masukkan sandi anda"
             />
@@ -87,7 +117,12 @@ const FormLogin: React.FC = () => {
           </Link>
         </div>
         <div className="login-btn">
-          <AuthButton type="submit" color="primary" size="md">
+          <AuthButton
+            type="submit"
+            color={`${btnDisable ? "disable" : "primary"}`}
+            size="md"
+            disabled={btnDisable}
+          >
             Masuk
           </AuthButton>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   cancel_show_password,
@@ -20,9 +20,36 @@ const FormRegister: React.FC = () => {
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
   const [passwordConfirmShown, setPasswordConfirmShown] =
     useState<boolean>(false);
-  const [isPasswordMatch, setIsPasswordMatch] = useState<boolean>();
   const [isEmailMatch, setIsEmailMatch] = useState<boolean>();
+  const [isPasswordMatch, setIsPasswordMatch] = useState<boolean>();
   const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
+  const [btnDisable, setBtnDisable] = useState<boolean>(true);
+  const [data, setData] = useState({
+    name: "",
+    username: "",
+    email: "",
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setData({
+      ...data,
+      [e.target.name]: value,
+    });
+  };
+
+  const btnDisablbeFn = () => {
+    if (
+      data.email.length > 0 &&
+      data.name.length > 0 &&
+      data.username.length > 0 &&
+      isPasswordMatch === true
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   const register = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -64,6 +91,17 @@ const FormRegister: React.FC = () => {
   const togglePasswordConfirm = () => {
     setPasswordConfirmShown(!passwordConfirmShown);
   };
+
+  useEffect(() => {
+    const state = btnDisablbeFn();
+    setBtnDisable(state);
+    console.log("render");
+  }, [
+    data.email.length,
+    data.name.length,
+    data.username.length,
+    isPasswordMatch,
+  ]);
   return (
     <div className="form-register-component">
       <form onSubmit={(event) => register(event)}>
@@ -77,6 +115,7 @@ const FormRegister: React.FC = () => {
               name="name" //tergantung backend
               id="nama"
               type="text"
+              onChange={(e) => handleChange(e)}
               className="input-field-regis lg-field-regis"
               placeholder="Masukkan nama anda"
             />
@@ -92,6 +131,7 @@ const FormRegister: React.FC = () => {
               name="username" //tergantung backend
               id="nama-pengguna"
               type="text"
+              onChange={(e) => handleChange(e)}
               className="input-field-regis lg-field-regis"
               placeholder="Masukkan nama pengguna"
             />
@@ -111,6 +151,7 @@ const FormRegister: React.FC = () => {
               name="email" //tergantung backend
               id="email-register"
               type="email"
+              onChange={(e) => handleChange(e)}
               className="input-field-regis lg-field-regis"
               placeholder="Masukkan nama pengguna"
             />
@@ -162,6 +203,7 @@ const FormRegister: React.FC = () => {
               onChange={(e) => isPasswordMatchCheck(e.target.value)}
               type={passwordConfirmShown ? "text" : "password"}
               id="password-repeat"
+              name="confPasswords"
               className="input-field-regis sm-field-regis"
               placeholder="Masukkan ulang sandi anda"
             />
@@ -193,7 +235,11 @@ const FormRegister: React.FC = () => {
           </label>
         </div>
         <div className="register-btn">
-          <AuthButton color="primary" size="sm">
+          <AuthButton
+            color={`${btnDisable ? "disable" : "primary"}`}
+            size="sm"
+            disabled={btnDisable}
+          >
             Daftar
           </AuthButton>
         </div>

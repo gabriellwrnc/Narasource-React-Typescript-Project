@@ -3,13 +3,13 @@
   display: grid;
   grid-template-areas: "top bottom";
   grid-template-columns: 3fr 7fr;
-  transition: 0.1s;
+  transition: 0.11s;
   height: 100vh;
 }
 
 .profile-user-layout-close {
   grid-template-columns: 87px 15fr;
-  transition: 1s;
+  transition: 0.1s;
 }
 
 .profile-sidebar {
