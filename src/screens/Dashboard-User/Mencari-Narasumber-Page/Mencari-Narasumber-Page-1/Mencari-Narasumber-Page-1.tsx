@@ -1,7 +1,8 @@
 import React from "react";
-import "./Mencari-Narasumber-Page.css";
+import { Link } from "react-router-dom";
+import "./Mencari-Narasumber-Page-1.css";
 
-const MencariNarasumberPage: React.FC = () => {
+const MencariNarasumberPage1: React.FC = () => {
   return (
     <div className="mencari-narasumber-wrapper">
       <div className="mencari-left">
@@ -18,9 +19,12 @@ const MencariNarasumberPage: React.FC = () => {
         <div className="right-form">
           <form action="">
             <div className="mencari-input-wrapper">
-              <label htmlFor="judul" className="mencari-input-label">
-                Judul
-              </label>
+              <div className="input-button">
+                <label htmlFor="judul" className="mencari-input-label">
+                  Judul
+                </label>
+                <span className="page-numbering">1/5</span>
+              </div>
               <input
                 type="text"
                 id="judul"
@@ -66,11 +70,18 @@ const MencariNarasumberPage: React.FC = () => {
               <label htmlFor="jumlah" className="mencari-input-label">
                 Jumlah Narasumber
               </label>
-              <div className="input-button">
-                <input type="number" id="jumlah" className="number-field" />
-                <div className="mencari-button">Oke</div>
-              </div>
+              <input type="number" id="jumlah" className="number-field" />
             </div>
+            <Link
+              to="/dashboard-user/mencari-narasumber/2"
+              className="profile-link"
+            >
+              <div className="mencari-input-wrapper">
+                <div className="input-button">
+                  <div className="mencari-button">Oke</div>
+                </div>
+              </div>
+            </Link>
           </form>
         </div>
       </div>
@@ -78,4 +89,4 @@ const MencariNarasumberPage: React.FC = () => {
   );
 };
 
-export default MencariNarasumberPage;
+export default MencariNarasumberPage1;

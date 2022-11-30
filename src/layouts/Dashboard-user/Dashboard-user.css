@@ -26,8 +26,7 @@
   z-index: 1;
 }
 .dashboard-outlet {
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: auto;
   padding-top: 35px;
   padding-left: 100px;
   padding-right: 90px;

@@ -9,7 +9,8 @@ import {
   GantiSandi,
   HomePage,
   Login,
-  MencariNarasumberPage,
+  MencariNarasumberPage1,
+  MencariNarasumberPage2,
   MenjadiNarasumber,
   Register,
   ResultPage,
@@ -53,7 +54,11 @@ const Router: React.FC = () => {
           ></Route>
           <Route
             path="/dashboard-user/mencari-narasumber/1"
-            element={<MencariNarasumberPage />}
+            element={<MencariNarasumberPage1 />}
+          ></Route>
+          <Route
+            path="/dashboard-user/mencari-narasumber/2"
+            element={<MencariNarasumberPage2 />}
           ></Route>
           <Route path="/dashboard-user/profil-user" element={<ProfileUser />}>
             <Route
