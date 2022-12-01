@@ -38,6 +38,14 @@ export { default as menjadi_narasumber } from "./menjadiNarasumber.svg"
 export { default as change_pic } from "./changePic.svg"
 export { default as hamburber } from "./hamburger.svg"
 export { default as success_icon } from "./Sukses.svg"
+export { default as time_rincian } from "./time-rincian.svg"
+export { default as icon_bri } from "./bankBRI.svg"
+export { default as icon_bca } from "./bankBCA.svg"
+export { default as icon_cimb } from "./bankCIMB.svg"
+export { default as icon_gopay } from "./iconGopay.svg"
+export { default as icon_ovo } from "./iconOvo.svg"
+export { default as icon_shopee } from "./iconShopee.svg"
+export { default as icon_salin } from "./iconSalin.svg"
 
 
 

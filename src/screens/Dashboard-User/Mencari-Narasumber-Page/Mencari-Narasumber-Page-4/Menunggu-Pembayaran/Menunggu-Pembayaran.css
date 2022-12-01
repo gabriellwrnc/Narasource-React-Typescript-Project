@@ -1,0 +1,83 @@
+.menunggu-pembayaran-content-wrapper {
+  margin-top: 50px;
+}
+
+.menunggu-pembayaran-virtual-wrapper {
+  margin-top: 40px;
+}
+
+.menunggu-title {
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #3186f5;
+}
+
+.menunggu-batas-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.menunggu-batas-left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.batas-tanggal {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #abaaaa;
+}
+
+.batas-waktu {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.total-pembayaran {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #cf4242;
+}
+
+.menunggu-total-pembayaran {
+  margin-top: 15px;
+}
+
+.menunggu-batas-right {
+  width: 84px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  color: #cf4242;
+}
+
+.menunggu-batas-salin {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 6px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #84b9ff;
+}

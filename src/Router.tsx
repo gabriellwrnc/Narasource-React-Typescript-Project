@@ -11,7 +11,11 @@ import {
   Login,
   MencariNarasumberPage1,
   MencariNarasumberPage2,
+  MencariNarasumberPage3,
+  MencariNarasumberPage4,
+  MencariNarasumberPage5,
   MenjadiNarasumber,
+  MenungguPembayaran,
   Register,
   ResultPage,
 } from "./screens";
@@ -59,6 +63,22 @@ const Router: React.FC = () => {
           <Route
             path="/dashboard-user/mencari-narasumber/2"
             element={<MencariNarasumberPage2 />}
+          ></Route>
+          <Route
+            path="/dashboard-user/mencari-narasumber/3"
+            element={<MencariNarasumberPage3 />}
+          ></Route>
+          <Route
+            path="/dashboard-user/mencari-narasumber/4"
+            element={<MencariNarasumberPage4 />}
+          ></Route>
+          <Route
+            path="/dashboard-user/mencari-narasumber/4/wait"
+            element={<MenungguPembayaran />}
+          ></Route>
+          <Route
+            path="/dashboard-user/mencari-narasumber/5"
+            element={<MencariNarasumberPage5 />}
           ></Route>
           <Route path="/dashboard-user/profil-user" element={<ProfileUser />}>
             <Route

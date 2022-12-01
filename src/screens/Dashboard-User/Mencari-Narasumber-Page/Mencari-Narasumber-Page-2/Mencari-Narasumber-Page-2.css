@@ -20,6 +20,11 @@
   margin-top: 24px;
 }
 
+.sesi-next-input-field-wrapper {
+  width: 100%;
+  margin-top: 8px;
+}
+
 .sesi-input {
   width: 96%;
 }
@@ -35,4 +40,42 @@
   font-weight: 500;
   font-size: 14px;
   text-align: center;
+  cursor: pointer;
+}
+
+.time {
+  width: 98%;
+  height: 35px;
+  border: 2px solid #abaaaa;
+  border-radius: 5px;
+  background: #f5f5f5;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sesi-time-field {
+  width: 96%;
+  height: 35px;
+  border: 2px solid #abaaaa;
+  border-radius: 5px;
+  background: #f5f5f5;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+.sesi-next-input-btn {
+  margin-top: 40px;
 }
