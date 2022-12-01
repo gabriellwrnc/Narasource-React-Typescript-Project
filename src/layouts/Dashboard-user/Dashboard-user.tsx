@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Dashboard-user.css";
-import { Outlet, useLocation } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import {
   arrow_left_header,
   arrow_profile,
@@ -18,6 +18,7 @@ import NotifPopUp from "./Notif-PopUp/NotifPopUp";
 
 const DashboardUser: React.FC = () => {
   const navigate = useLocation();
+  const move = useNavigate();
   const [showNotif, setShowNotif] = useState<boolean>(false);
   const toggleNotif = () => {
     setShowNotif((prevState) => !prevState);
@@ -80,10 +81,10 @@ const DashboardUser: React.FC = () => {
       </div>
       <div className="dashboard-header">
         <div className="dashboard-header-left">
-          <div className="header-circle-left">
+          <div className="header-circle-left" onClick={() => move(-1)}>
             <img src={arrow_left_header} className="arrow-header" />
           </div>
-          <div className="header-circle-right">
+          <div className="header-circle-right" onClick={() => move(+1)}>
             <img src={arrow_right_header} className="arrow-header" />
           </div>
         </div>
