@@ -9,10 +9,12 @@ export interface ActivityCardsProps {
   jenis: string;
   tanggal: string;
   waktu: string;
+  display: boolean;
 }
 
 const ActivityCards: React.FC<ActivityCardsProps> = (props) => {
-  const { kategori, jenis, tanggal, waktu, kondisi } = props;
+  var { kategori, jenis, tanggal, waktu, kondisi, display } = props;
+
   var image;
 
   if (kondisi == "berlangsung") {
@@ -23,7 +25,9 @@ const ActivityCards: React.FC<ActivityCardsProps> = (props) => {
     image = <img src={icon_sukses} />;
   }
 
-  return (
+  return display ? (
+    <></>
+  ) : (
     <div>
       <div className="activity-card">
         <div className="activity-card-img">{image}</div>

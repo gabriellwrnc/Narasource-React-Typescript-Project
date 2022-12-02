@@ -1,4 +1,7 @@
+import { AxiosError, AxiosResponse } from "axios";
+import { error } from "console";
 import React, { ChangeEvent, useEffect, useState } from "react";
+import { useMutation } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import {
   cancel_show_password,
@@ -7,8 +10,9 @@ import {
   show_password,
 } from "../../../../assets";
 import { AuthButton } from "../../../../components";
+import { useLogin } from "../../../../hooks/useAuth";
 import { authService } from "../../../../services";
-import { LoginRequest } from "../../../../types/Login";
+import { LoginRequest, LoginResponse } from "../../../../types/Login";
 import ModalError from "../Modal-Error/Modal-Error";
 import "./Form-Login.css";
 
@@ -47,33 +51,34 @@ const FormLogin: React.FC = () => {
     setShowErrorModal((prevState) => !prevState);
   };
 
-  const login = async (e: React.FormEvent<HTMLFormElement>) => {
-    try {
-      e.preventDefault();
+  const mutation = useLogin();
 
-      const formData = new FormData(e.target as HTMLFormElement);
-      const inputObject = Object.fromEntries(formData);
+  const loginWithMutation = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const inputObject = Object.fromEntries(formData);
 
-      const resp = await authService.login(inputObject as any as LoginRequest);
-      console.log("resp", resp);
-      localStorage.setItem("@token", resp.data.access_token);
-      navigate("/dashboard-user/home-page"); //ganti
-    } catch (error: any) {
-      setShowErrorModal(true);
-      console.log(error.response);
-    }
-    // console.log("login");
+    mutation.mutate(inputObject as any as LoginRequest, {
+      onSuccess: (resp) => {
+        console.log("resp", resp);
+        localStorage.setItem("@token", resp.data.access_token);
+        navigate("/dashboard-user/home-page"); //ganti
+      },
+      onError: (error) => {
+        setShowErrorModal(true);
+        console.log("error.response", error.response);
+      },
+    });
   };
 
   useEffect(() => {
     const state = btnDisablbeFn();
     setBtnDisable(state);
-    console.log("render");
   }, [data.email.length, data.password.length]);
 
   return (
     <div className="form-login-component">
-      <form onSubmit={(event) => login(event)}>
+      <form onSubmit={(event) => loginWithMutation(event)}>
         <div className="form-login-email">
           <h1 className="input-title lg-input-title">Email</h1>
           <div className="form-login-email-input">

@@ -9,9 +9,12 @@ import {
   show_password,
 } from "../../../../assets";
 import AuthButton from "../../../../components/buttons/Auth_Buttons/AuthButton";
+import { useRegister } from "../../../../hooks/useAuth";
 import { authService } from "../../../../services";
+import { LoginRequest } from "../../../../types/Login";
 import { RegisterRequest } from "../../../../types/Register";
 import ModalSuccess from "../Modal-Succes/ModalSuccess";
+import ModalTerms from "../Modal-Terms/ModalTerms";
 import "./Form-Register.css";
 
 const FormRegister: React.FC = () => {
@@ -23,7 +26,9 @@ const FormRegister: React.FC = () => {
   const [isEmailMatch, setIsEmailMatch] = useState<boolean>();
   const [isPasswordMatch, setIsPasswordMatch] = useState<boolean>();
   const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
+  const [showTermsModal, setShowTermsModal] = useState<boolean>(false);
   const [btnDisable, setBtnDisable] = useState<boolean>(true);
+  const [agree, setAgree] = useState<boolean>(false);
   const [data, setData] = useState({
     name: "",
     username: "",
@@ -43,7 +48,8 @@ const FormRegister: React.FC = () => {
       data.email.length > 0 &&
       data.name.length > 0 &&
       data.username.length > 0 &&
-      isPasswordMatch === true
+      isPasswordMatch === true &&
+      agree === true
     ) {
       return false;
     } else {
@@ -51,27 +57,26 @@ const FormRegister: React.FC = () => {
     }
   };
 
-  const register = async (e: React.FormEvent<HTMLFormElement>) => {
+  const mutationRegister = useRegister();
+
+  const registerWithMutation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const inputObject = Object.fromEntries(formData);
 
-    try {
-      const formData = new FormData(e.target as HTMLFormElement);
-      const inputObject = Object.fromEntries(formData);
-
-      const register = await authService.register(
-        inputObject as any as RegisterRequest
-      );
-      console.log("register", register); //melihat data yang diambil
-      setShowSuccessModal(true);
-    } catch (error: any) {
-      if (error.response.data.message == "Email already exist") {
-        setIsEmailMatch(false);
-      }
-      console.log("error.response", error.response);
-      // alert(error.response.data.message); //menangkap error response axios & tergantung backend (maksudnya bisa aja error.response.data.message)
-    }
+    mutationRegister.mutate(inputObject as any as RegisterRequest, {
+      onSuccess: (resp) => {
+        console.log("resp", resp);
+        setShowSuccessModal(true); //ganti
+      },
+      onError: (error: any) => {
+        if (error.response.data.message == "Email already exist") {
+          setIsEmailMatch(false);
+        }
+        console.log("error.response", error.response);
+      },
+    });
   };
-
   const isPasswordMatchCheck = (value: string) => {
     if (value !== password) {
       setIsPasswordMatch(false);
@@ -85,6 +90,14 @@ const FormRegister: React.FC = () => {
     setShowSuccessModal((prevState) => !prevState);
   };
 
+  const toggleAgree = () => {
+    setAgree((prevState) => !prevState);
+  };
+
+  const toggleTermsModal = () => {
+    setShowTermsModal((prevState) => !prevState);
+  };
+
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
@@ -95,16 +108,16 @@ const FormRegister: React.FC = () => {
   useEffect(() => {
     const state = btnDisablbeFn();
     setBtnDisable(state);
-    console.log("render");
   }, [
     data.email.length,
     data.name.length,
     data.username.length,
     isPasswordMatch,
+    agree,
   ]);
   return (
     <div className="form-register-component">
-      <form onSubmit={(event) => register(event)}>
+      <form onSubmit={(event) => registerWithMutation(event)}>
         <div className="form-regis-nama">
           <h1 className="input-title sm-input-title">Nama</h1>
           <div className="form-regis-input">
@@ -225,14 +238,20 @@ const FormRegister: React.FC = () => {
           </div>
         </div>
         <div className="form-regis-terms">
-          <input type="checkbox" id="terms" className="custom-checkbox" />
-          <label htmlFor="terms">
+          <input
+            type="checkbox"
+            id="terms"
+            className="custom-checkbox"
+            checked={agree}
+            onClick={() => toggleAgree()}
+          />
+          <span>
             Saya telah membaca dan menyetujui{" "}
-            <a href="" className="terms-anchor">
+            <span className="terms-anchor" onClick={() => toggleTermsModal()}>
               Persyaratan & Kebijakan
-            </a>{" "}
+            </span>{" "}
             dari pihak NaraSource.
-          </label>
+          </span>
         </div>
         <div className="register-btn">
           <AuthButton
@@ -244,6 +263,17 @@ const FormRegister: React.FC = () => {
           </AuthButton>
         </div>
       </form>
+      {showTermsModal ? (
+        <ModalTerms
+          onClose={() => toggleTermsModal()}
+          onClick={() => {
+            toggleTermsModal();
+            toggleAgree();
+          }}
+        />
+      ) : (
+        <></>
+      )}
       {showSuccessModal ? (
         <ModalSuccess onClose={() => toggleSuccessModal()} />
       ) : (

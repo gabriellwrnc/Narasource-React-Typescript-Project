@@ -13,3 +13,18 @@ export interface User {
 }
 
 export type Profile = Omit<User, "_createdAt" | "_updatedAt">;
+
+export interface Activity {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  date: Date;
+  time_start: Date;
+  time_end: Date;
+  price: number;
+  confirmation_status: string;
+  narasumber?: any;
+  created_at: Date;
+  status: string;
+}

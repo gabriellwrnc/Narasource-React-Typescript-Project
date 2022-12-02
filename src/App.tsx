@@ -1,10 +1,15 @@
 import React from "react";
 import Router from "./Router";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+// Create a client
+const queryClient = new QueryClient();
+
 const App: React.FC = () => {
   return (
-    <React.Fragment>
+    <QueryClientProvider client={queryClient}>
       <Router />
-    </React.Fragment>
+    </QueryClientProvider>
   );
 };
 
