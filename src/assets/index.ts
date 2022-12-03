@@ -15,6 +15,7 @@ export { default as email_icon } from "./email.svg"
 export { default as arrow_profile } from "./arrowProfile.svg"
 export { default as arrow_left_header } from "./arrowLeftHeader.svg"
 export { default as arrow_right_header } from "./arrowRightHeader.svg"
+export { default as arrow_right_black } from "./arrowRightBlack.svg"
 export { default as show_password } from "./showPass.svg"
 export { default as cancel_show_password } from "./cancelShowPass.svg"
 export { default as facebook } from "./image/facebook.jpg"
@@ -47,6 +48,7 @@ export { default as icon_gopay } from "./iconGopay.svg"
 export { default as icon_ovo } from "./iconOvo.svg"
 export { default as icon_shopee } from "./iconShopee.svg"
 export { default as icon_salin } from "./iconSalin.svg"
+export { default as brand } from "./Brand.svg"
 
 
 

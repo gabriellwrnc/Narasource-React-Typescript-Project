@@ -4,7 +4,7 @@
   grid-template-areas: "top bottom";
   grid-template-columns: 3fr 7fr;
   transition: 0.11s;
-  height: 100vh;
+  height: 100%;
 }
 
 .profile-user-layout-close {

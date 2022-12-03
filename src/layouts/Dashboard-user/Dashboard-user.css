@@ -34,7 +34,7 @@
 }
 
 .dashboard-outlet-user {
-  overflow: hidden;
+  overflow: auto;
   grid-area: content;
 }
 

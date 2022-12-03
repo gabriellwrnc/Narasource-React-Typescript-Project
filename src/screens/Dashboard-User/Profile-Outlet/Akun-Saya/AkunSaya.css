@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 40px;
 }
 
 .akun-saya-picture {
@@ -62,6 +63,7 @@
 }
 
 .akun-saya-option-container {
+  position: relative;
   display: flex;
   gap: 69px;
   padding-bottom: 12px;
@@ -79,7 +81,6 @@
   width: 50px;
   height: 50px;
   display: flex;
-
   align-items: center;
   border-radius: 10px;
   justify-content: center;
@@ -91,4 +92,32 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+}
+
+.akun-saya-option-petunjuk-active {
+  position: absolute;
+  width: 175px;
+  bottom: -2px;
+  border-bottom: 4px solid #3186f5;
+}
+
+.akun-saya-option-tentang-active {
+  position: absolute;
+  width: 238px;
+  right: 258px;
+  bottom: -2px;
+  bottom: 0;
+  border-bottom: 4px solid #3186f5;
+}
+
+.akun-saya-option-syarat-active {
+  position: absolute;
+  width: 248px;
+  right: -10px;
+  bottom: -2px;
+  border-bottom: 4px solid #3186f5;
+}
+
+.akun-saya-option-content {
+  width: 687px;
 }
