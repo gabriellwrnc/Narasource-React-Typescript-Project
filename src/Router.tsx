@@ -1,6 +1,6 @@
 import { useState, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Auth, DashboardUser, ProfileUser } from "./layouts";
+import { DashboardUser, ProfileUser } from "./layouts";
 import {
   ActivityPage,
   AkunSaya,
@@ -20,6 +20,7 @@ import {
 } from "./screens";
 const Login = lazy(() => import("./screens/Auth/Login/Login"));
 const Register = lazy(() => import("./screens/Auth/Register/Register"));
+const Auth = lazy(() => import("./layouts/Auth/Auth"));
 
 const Router: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
