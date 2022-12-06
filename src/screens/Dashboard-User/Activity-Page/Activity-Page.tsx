@@ -7,7 +7,6 @@ import { getActivity } from "../../../services/user";
 
 const ActivityPage: React.FC = () => {
   const activities = useQuery("activities", getActivity);
-  const [sortingActive, setSortingActive] = useState<boolean>();
   const [berlangsungActive, setBerlangsungActive] = useState<boolean>();
   const [gagalActive, setGagalActive] = useState<boolean>();
   const [suksesActive, setSuksesActive] = useState<boolean>();

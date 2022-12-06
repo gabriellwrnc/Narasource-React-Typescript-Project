@@ -83,10 +83,6 @@
   transition: all 0.4s ease-in-out;
 }
 
-.popular-active {
-  transition: all 0.4s ease;
-}
-
 .home-page-content {
   margin-top: 28px;
   display: flex;

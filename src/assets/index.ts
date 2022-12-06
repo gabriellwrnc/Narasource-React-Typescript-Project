@@ -49,6 +49,8 @@ export { default as icon_ovo } from "./iconOvo.svg"
 export { default as icon_shopee } from "./iconShopee.svg"
 export { default as icon_salin } from "./iconSalin.svg"
 export { default as brand } from "./Brand.svg"
+export { default as landing_logo } from "./landing-page-logo.svg"
+export { default as arrow_left_landing } from "./charm_arrow-left.svg"
 
 
 

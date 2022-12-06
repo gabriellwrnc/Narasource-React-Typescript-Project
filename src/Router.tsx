@@ -8,6 +8,7 @@ import {
   EditProfile,
   GantiSandi,
   HomePage,
+  LandingPage,
   Login,
   MencariNarasumberPage1,
   MencariNarasumberPage2,
@@ -33,6 +34,7 @@ const Router: React.FC = () => {
   return loading == false ? (
     <BrowserRouter>
       <Routes>
+        <Route index element={<LandingPage />} />
         <Route path="/auth" element={<Auth />}>
           <Route path="/auth/login" element={<Login />}></Route>
           <Route path="/auth/register" element={<Register />}></Route>

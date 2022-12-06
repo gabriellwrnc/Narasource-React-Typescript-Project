@@ -73,4 +73,5 @@
   justify-content: space-around;
   align-items: center;
   background-color: #3186f5;
+  transition: all 0.4s ease-in-out;
 }
