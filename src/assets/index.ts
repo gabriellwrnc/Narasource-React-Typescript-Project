@@ -51,6 +51,15 @@ export { default as icon_salin } from "./iconSalin.svg"
 export { default as brand } from "./Brand.svg"
 export { default as landing_logo } from "./landing-page-logo.svg"
 export { default as arrow_left_landing } from "./charm_arrow-left.svg"
+export { default as pic_page_4 } from "./picpage3.svg"
+export { default as sonef_landing } from "./sonefLanding.svg"
+export { default as bambang_landing } from "./bambangLanding.svg"
+export { default as ardhy_landing } from "./ardhyLanding.svg"
+export { default as novita_landing } from "./novitaLanding.svg"
+export { default as gabriel_landing } from "./gabrielLanding.svg"
+export { default as maria_landing } from "./mariaLanding.svg"
+export { default as landing_footer } from "./landingFooter.svg"
+export { default as mka } from "./logoMKA.svg"
 
 
 

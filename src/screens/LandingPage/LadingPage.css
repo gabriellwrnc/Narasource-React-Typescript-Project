@@ -1,14 +1,12 @@
 .landing-page-wrapper {
   width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow-y: scroll;
+  height: 100%;
 }
 
 .landing-page-navbar {
   position: fixed;
   z-index: 1;
-  background: #2b2b2b;
+
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "Reem Kufi";
   font-style: normal;
@@ -17,10 +15,18 @@
   color: white;
   height: 84px;
   width: 100%;
-  transition: 0.2s;
+  transition: 1s;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.bg-navbar {
+  background: rgba(245, 245, 245, 0.3);
+}
+
+.bg-navbar-active {
+  background: rgba(43, 43, 43, 0.8);
 }
 
 .landing-page-navbar-right {
@@ -32,6 +38,8 @@
 
 .landing-navbar-right-list {
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
 
 .landing-navbar-right-btn {
@@ -105,8 +113,9 @@
 }
 
 .landing-img {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url("/src/assets/image/illustration.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -125,7 +134,7 @@
 }
 
 .landing-page-2 {
-  padding: 100px 0;
+  padding-top: 118px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,6 +182,7 @@
 }
 
 .landing-page-3 {
+  padding: 100px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,4 +232,264 @@
 .link-white {
   text-decoration: none;
   color: white;
+}
+
+.landing-page-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 230px;
+  margin-bottom: 100px;
+}
+
+.landing-page-4-box {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.landing-page-4-content {
+  width: 100%;
+  height: 270px;
+  background-color: #3186f5;
+  border-radius: 50px;
+  display: flex;
+  position: relative;
+  padding: 0 85px;
+  box-sizing: border-box;
+  gap: 10%;
+}
+
+.page-4-content-left {
+  position: relative;
+  bottom: 69px;
+}
+
+.page-4-content-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+}
+
+.page-4-tersedia {
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  color: white;
+}
+
+.page-4-dapatkan {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 11px;
+  color: white;
+}
+
+.page-4-btn {
+  width: 215px;
+  height: 66px;
+  background: #f5f5f5;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  color: #3186f5;
+  cursor: pointer;
+}
+
+.landing-page-5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  margin-bottom: 280px;
+}
+
+.landing-page-5-box {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.landing-page-5-title {
+  margin-bottom: 115px;
+}
+
+.page-5-content-pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.landing-kategori {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #3186f5;
+  padding: 8px 0 14px 0;
+  width: 250px;
+  text-align: center;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.landing-kategori-mid {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #3186f5;
+  padding-bottom: 14px;
+  width: 250px;
+  text-align: center;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.landing-name {
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.page-5-content-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-5-content-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-page-5-content {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.landing-page-6 {
+  width: 100%;
+  background-color: #2b2b2b;
+  position: relative;
+  bottom: -4px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-page-6-box {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 55px 0;
+}
+
+.landing-page-6-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.page-6-content-platform {
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 18px;
+}
+
+.page-6-content-slogan {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.page-6-content-copyright {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  color: #7d7d7d;
+  margin-top: 44px;
+}
+
+.page-6-content-title {
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.page-6-content-2-footer {
+  margin-bottom: 15px;
+}
+
+.content-2-footer-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  color: #d9d9d9;
+}
+
+.content-2-footer-picture {
+  display: flex;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.icon-footer {
+  cursor: pointer;
+}
+
+.margin-top {
+  margin-top: 40px;
+}
+
+.margin-bottom {
+  margin-bottom: 5px;
+}
+
+.logo-footer-mka {
+  width: fit-content;
+  border-bottom: 1px solid #7d7d7d;
+  padding-bottom: 15px;
+}
+
+.logo-footer-mka-name {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.logo-footer-mka-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-footer-map {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
 }
