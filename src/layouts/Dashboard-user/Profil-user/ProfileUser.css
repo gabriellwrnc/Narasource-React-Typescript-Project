@@ -82,10 +82,25 @@
   bottom: 12px;
 }
 
+.profile-icon-arrow-red {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+}
+
 .value-name {
   font-family: "Poppins", sans-serif;
   font-size: 17px;
   color: #3186f5;
+  margin-left: 35px;
+}
+
+.value-name-red {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  color: #cf4242;
   margin-left: 35px;
 }
 

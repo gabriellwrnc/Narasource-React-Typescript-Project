@@ -2,42 +2,111 @@
   position: absolute;
   left: 45%;
   top: 70px;
-  width: 453px;
+  width: 390px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  background-color: #f5f5f5;
   z-index: 30;
 }
 
-.notif-box {
+.notif-title-box {
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
   display: flex;
-  width: 403px;
-  margin-left: 25px;
-  margin-top: 23px;
-  font-family: "Poppins";
-  border-bottom: 1px solid #abaaaa;
-  margin-bottom: 36px;
-}
-
-.notif-desc-box {
-  margin-left: 26px;
-}
-
-.notif-title {
+  justify-content: center;
+  align-items: center;
+  font-family: "Reem Kufi";
+  font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  margin-bottom: 6px;
+  margin-bottom: 35px;
 }
 
-.notif-desc {
-  font-weight: 300;
-  font-size: 14px;
-  margin-bottom: 26px;
+.notif-sorting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
-.notif-date {
+.notif-belum {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  color: #5e5858;
+  padding-bottom: 7px;
+  cursor: pointer;
+}
+
+.notif-active-sorting {
+  border-bottom: 2px solid #3186f5;
+}
+
+.notif-sudah {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  color: #5e5858;
+  padding-bottom: 7px;
+  cursor: pointer;
+}
+
+.notif-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #7d7d7d;
+  margin-bottom: 30px;
+}
+
+.notif-box-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 75%;
+}
+
+.notif-title-date {
+  margin-top: 10px;
+  font-family: "Poppins";
+  font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   color: #7d7d7d;
-  margin-bottom: 28px;
+}
+
+.notif-title-header {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+
+.notif-title-desc {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  color: #2b2b2b;
+}
+
+.icon-notif-sudah {
+  width: 37px;
 }

@@ -2,7 +2,10 @@ import { useState, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DashboardUser, ProfileUser } from "./layouts";
 import {
+  ActivityBerlangsung,
+  ActivityGagal,
   ActivityPage,
+  ActivitySukses,
   AkunSaya,
   ArticlePage,
   EditProfile,
@@ -61,6 +64,18 @@ const Router: React.FC = () => {
             <Route
               path="/dashboard-user/activity-page"
               element={<ActivityPage />}
+            ></Route>
+            <Route
+              path="/dashboard-user/activity-page/berlangsung"
+              element={<ActivityBerlangsung />}
+            ></Route>
+            <Route
+              path="/dashboard-user/activity-page/gagal"
+              element={<ActivityGagal />}
+            ></Route>
+            <Route
+              path="/dashboard-user/activity-page/sukses"
+              element={<ActivitySukses />}
             ></Route>
             <Route
               path="/dashboard-user/mencari-narasumber/1"

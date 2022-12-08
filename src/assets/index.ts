@@ -13,6 +13,7 @@ export { default as side_bar_aktivitas_active } from "./sidebarAktivitas_active.
 export { default as password_icon} from "./password.svg"
 export { default as email_icon } from "./email.svg"
 export { default as arrow_profile } from "./arrowProfile.svg"
+export { default as arrow_profile_red } from "./arrowProfileRed.svg"
 export { default as arrow_left_header } from "./arrowLeftHeader.svg"
 export { default as arrow_right_header } from "./arrowRightHeader.svg"
 export { default as arrow_right_black } from "./arrowRightBlack.svg"
@@ -60,6 +61,15 @@ export { default as gabriel_landing } from "./gabrielLanding.svg"
 export { default as maria_landing } from "./mariaLanding.svg"
 export { default as landing_footer } from "./landingFooter.svg"
 export { default as mka } from "./logoMKA.svg"
+export { default as warning } from "./warning.svg"
+export { default as dot } from "./customDot.svg"
+export { default as star_off } from "./star.svg"
+export { default as star_fill } from "./starFill.svg"
+export { default as juan } from "./image/juan.png"
+export { default as diterima } from "./verif.svg"
+export { default as notif_belum } from "./notifBelum.svg"
+export { default as notif_sudah } from "./notifSudah.svg"
+export { default as icon_logout } from "./logoutIcon.svg"
 
 
 
