@@ -6,8 +6,10 @@ import {
   ActivityGagal,
   ActivityPage,
   ActivitySukses,
+  AktivitasNarasumber,
   AkunSaya,
   ArticlePage,
+  EditNarasumber,
   EditProfile,
   GantiSandi,
   HomePage,
@@ -19,8 +21,10 @@ import {
   MencariNarasumberPage5,
   MenjadiNarasumber,
   MenungguPembayaran,
+  RatingNarasumber,
   ResultPage,
 } from "./screens";
+
 const Login = lazy(() => import("./screens/Auth/Login/Login"));
 const Register = lazy(() => import("./screens/Auth/Register/Register"));
 const Auth = lazy(() => import("./layouts/Auth/Auth"));
@@ -109,6 +113,18 @@ const Router: React.FC = () => {
               <Route
                 path="/dashboard-user/profil-user/edit"
                 element={<EditProfile />}
+              ></Route>
+              <Route
+                path="/dashboard-user/profil-user/profile-narasumber/aktivitas"
+                element={<AktivitasNarasumber />}
+              ></Route>
+              <Route
+                path="/dashboard-user/profil-user/profile-narasumber/rating"
+                element={<RatingNarasumber />}
+              ></Route>
+              <Route
+                path="/dashboard-user/profil-user/profile-narasumber/edit-berkas"
+                element={<EditNarasumber />}
               ></Route>
               <Route
                 path="/dashboard-user/profil-user/reset"

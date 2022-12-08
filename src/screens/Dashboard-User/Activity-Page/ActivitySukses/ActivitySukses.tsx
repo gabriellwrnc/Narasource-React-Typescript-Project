@@ -12,9 +12,7 @@ import "./ActivitySukses.css";
 const ActivitySukses: React.FC = () => {
   const [rating, setRating] = useState<number>(0);
   const [hover, setHover] = useState<number>(0);
-
-  console.log(rating, "rating");
-  console.log(hover, "hover");
+  const level_access = localStorage.getItem("@level_access");
   return (
     <div className="activity-berlangsung-wrapper">
       <span className="activity-next-title">Status</span>
@@ -95,27 +93,55 @@ const ActivitySukses: React.FC = () => {
             <span className="rating-text-title">
               Berikan rating ke narasumber?
             </span>
-            <div className="rating-star">
-              {[...Array(5)].map((star, index) => {
-                index += 1;
-                return (
-                  <img
-                    key={index}
-                    src={index <= (hover || rating) ? star_fill : star_off}
-                    alt="star"
-                    className="star-icon"
-                    onClick={() => setRating(index)}
-                    onMouseEnter={() => setHover(index)}
-                    onMouseLeave={() => setHover(rating)}
-                    onDoubleClick={() => {
-                      setRating(0);
-                      setHover(0);
-                    }}
-                  />
-                );
-              })}
-            </div>
-            {rating > 0 ? (
+            {level_access === "narasumber" ? (
+              <div className="rating-star">
+                {[...Array(5)].map((star, index) => {
+                  index += 1;
+                  return (
+                    <img
+                      key={index}
+                      src={star_fill}
+                      alt="star"
+                      className="star-icon"
+                    />
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="rating-star">
+                {[...Array(5)].map((star, index) => {
+                  index += 1;
+                  return (
+                    <img
+                      key={index}
+                      src={index <= (hover || rating) ? star_fill : star_off}
+                      alt="star"
+                      className="star-icon"
+                      onClick={() => setRating(index)}
+                      onMouseEnter={() => setHover(index)}
+                      onMouseLeave={() => setHover(rating)}
+                      onDoubleClick={() => {
+                        setRating(0);
+                        setHover(0);
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            )}
+
+            {level_access === "narasumber" ? (
+              <div className="rating-text-alasan">
+                <label htmlFor="rating" className="rating-alasan">
+                  Alasan Penilaian?
+                </label>
+                <textarea
+                  className="rating-alasan-area"
+                  id="rating"
+                  placeholder="1. Narasumber memberikkan jawaban secara kritis"
+                />
+              </div>
+            ) : rating > 0 ? (
               <div className="rating-text-alasan">
                 <label htmlFor="rating" className="rating-alasan">
                   Alasan Penilaian?
@@ -133,13 +159,17 @@ const ActivitySukses: React.FC = () => {
           <div className="activity-next-content-right-detail-harga">
             <div className="next-content-right-detail-harga">
               <div className="next-content-right-detail-harga-text">
-                Pembayaran
+                {level_access === "narasumber" ? "Pendapatan" : "Pembayaran"}
               </div>
               <div className="next-content-right-detail-harga-harga">RP20K</div>
             </div>
-            <div className="next-content-right-detail-btn">
-              <AuthButton size="sm">Masuk</AuthButton>
-            </div>
+            {level_access === "narasumber" ? (
+              <></>
+            ) : (
+              <div className="next-content-right-detail-btn">
+                <AuthButton size="sm">Masuk</AuthButton>
+              </div>
+            )}
           </div>
         </div>
       </div>

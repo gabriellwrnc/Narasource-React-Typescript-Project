@@ -16,6 +16,7 @@ const AkunSaya: React.FC = () => {
   const [petunjukActive, setPetunjukActive] = useState<boolean>(true);
   const [tentangActive, setTentangActive] = useState<boolean>(false);
   const [syaratActive, setSyaratActive] = useState<boolean>(false);
+  const level_access = localStorage.getItem("@level_access");
 
   const togglePetunjuk = () => {
     setPetunjukActive(true);
@@ -47,12 +48,20 @@ const AkunSaya: React.FC = () => {
       <span className="akun-saya-nama">Mushonnef Anwar</span>
       <span className="akun-saya-total">Total Wawancara : 7</span>
       <Link
-        to="/dashboard-user/profil-user/menjadi-narasumber"
+        to={
+          level_access === "narasumber"
+            ? "/dashboard-user/profil-user/profile-narasumber/aktivitas"
+            : "/dashboard-user/profil-user/menjadi-narasumber"
+        }
         className="profile-link"
       >
         <div className="akun-saya-btn-daftar">
           <img src={menjadi_narasumber} alt="icon menjadi narasumber" />
-          <span className="akun-saya-btn-desc">Menjadi Narasumber</span>
+          <span className="akun-saya-btn-desc">
+            {level_access === "narasumber"
+              ? "Profile Narasumber"
+              : "Menjadi Narasumber"}
+          </span>
         </div>
       </Link>
       <div className="akun-saya-option-container">

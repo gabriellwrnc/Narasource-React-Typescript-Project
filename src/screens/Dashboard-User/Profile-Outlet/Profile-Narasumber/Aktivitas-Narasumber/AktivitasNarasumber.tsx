@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { ActivityCards, CircledButton } from "../../../components";
-import "./Activity-Page.css";
 import { useQuery } from "react-query";
-import { getActivity } from "../../../services/user";
-import { no_activity } from "../../../assets";
+import { no_activity } from "../../../../../assets";
+import { ActivityCards } from "../../../../../components";
+import { getActivity } from "../../../../../services/user";
+import "./AktivitasNarasumber.css";
 
-const ActivityPage: React.FC = () => {
+const AktivitasNarasumber: React.FC = () => {
   const activities = useQuery("activities", getActivity);
   const [berlangsungActive, setBerlangsungActive] = useState<boolean>();
   const [gagalActive, setGagalActive] = useState<boolean>();
@@ -29,7 +29,7 @@ const ActivityPage: React.FC = () => {
     setSuksesActive(true);
   };
   return (
-    <div className="activity-page-wrapper">
+    <div className="activity-narasumber-page-wrapper">
       {/* <div className="activity-none">
         <img src={no_activity} alt="no activity" />
         <span className="activity-none-text">Belum Ada Aktivitas</span>
@@ -80,7 +80,7 @@ const ActivityPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="activity-content">
+      <div className="activity-narasumber-content">
         {activities.data?.data.map((activities) => {
           let kondisi: any;
           if (activities.status === "0") {
@@ -117,4 +117,4 @@ const ActivityPage: React.FC = () => {
   );
 };
 
-export default ActivityPage;
+export default AktivitasNarasumber;

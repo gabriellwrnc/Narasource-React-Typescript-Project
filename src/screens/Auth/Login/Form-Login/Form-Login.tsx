@@ -62,6 +62,7 @@ const FormLogin: React.FC = () => {
       onSuccess: (resp) => {
         console.log("resp", resp);
         localStorage.setItem("@token", resp.data.access_token);
+        localStorage.setItem("@level_access", resp.data.level_access);
         navigate("/dashboard-user/home-page"); //ganti
       },
       onError: (error) => {

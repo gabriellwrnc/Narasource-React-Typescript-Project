@@ -10,4 +10,5 @@ export interface RegisterRequest {
 
 export interface RegisterResponse {
   access_token: string;
+  level_access: string;
 }

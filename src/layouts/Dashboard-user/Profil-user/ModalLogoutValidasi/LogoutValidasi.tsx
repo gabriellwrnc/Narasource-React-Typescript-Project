@@ -6,6 +6,7 @@ import "./LogoutValidasi.css";
 
 interface LogoutModalProps {
   onClose: () => void;
+  onLogout: () => void;
 }
 
 const LogoutValidasi: React.FC<LogoutModalProps> = (props) => {
@@ -17,9 +18,9 @@ const LogoutValidasi: React.FC<LogoutModalProps> = (props) => {
         <span className="logout-desc">
           Apakah anda yakin ingin keluar akun?
         </span>
-        <Link to={"/auth/login"} className="link-white">
-          <div className="logout-valid-btn-yes">Ya</div>
-        </Link>
+        <div className="logout-valid-btn-yes" onClick={() => props.onLogout()}>
+          Ya
+        </div>
         <div className="logout-valid-btn-no" onClick={() => props.onClose()}>
           Belum
         </div>

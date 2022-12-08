@@ -1,0 +1,17 @@
+.activity-narasumber-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 59px;
+}
+
+.activity-narasumber-content {
+  display: flex;
+  margin-top: 42px;
+  width: 790px;
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 13px;
+  flex-wrap: wrap;
+}

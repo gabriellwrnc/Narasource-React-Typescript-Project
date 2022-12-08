@@ -4,6 +4,7 @@ import { AuthButton } from "../../../../components";
 import "./ActivityGagal.css";
 
 const ActivityGagal: React.FC = () => {
+  const level_access = localStorage.getItem("@level_access");
   return (
     <div className="activity-berlangsung-wrapper">
       <span className="activity-next-title">Status</span>
@@ -79,17 +80,25 @@ const ActivityGagal: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="activity-next-content-right-detail-harga">
-            <div className="next-content-right-detail-harga">
-              <div className="next-content-right-detail-harga-text">
-                Pembayaran
+          {level_access === "narasumber" ? (
+            <></>
+          ) : (
+            <>
+              <div className="activity-next-content-right-detail-harga">
+                <div className="next-content-right-detail-harga">
+                  <div className="next-content-right-detail-harga-text">
+                    Pembayaran
+                  </div>
+                  <div className="next-content-right-detail-harga-harga">
+                    RP20K
+                  </div>
+                </div>
+                <div className="next-content-right-detail-btn">
+                  <AuthButton size="sm">Coba Lagi</AuthButton>
+                </div>
               </div>
-              <div className="next-content-right-detail-harga-harga">RP20K</div>
-            </div>
-            <div className="next-content-right-detail-btn">
-              <AuthButton size="sm">Coba Lagi</AuthButton>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       </div>
     </div>

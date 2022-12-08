@@ -1,14 +1,37 @@
+.activity-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity-none {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-none-text {
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  color: #3186f5;
+}
+
 .activity-page-action {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .activity-content {
   display: flex;
   margin-top: 42px;
   justify-content: center;
-  column-gap: 100px;
+  column-gap: 20px;
   row-gap: 13px;
   flex-wrap: wrap;
 }

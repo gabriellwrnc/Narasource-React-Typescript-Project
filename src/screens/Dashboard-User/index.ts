@@ -16,3 +16,7 @@ export {default as MenjadiNarasumber} from "./Profile-Outlet/Menjadi-Narasumber/
 export {default as ActivitySukses} from "./Activity-Page/ActivitySukses/ActivitySukses"
 export {default as ActivityBerlangsung} from "./Activity-Page/ActivityBerlangsung/ActivityBerlangsung"
 export {default as ActivityGagal} from "./Activity-Page/ActivityGagal/ActivityGagal"
+export {default as ProfileNarasumber} from "./Profile-Outlet/Profile-Narasumber/ProfileNarasumber"
+export {default as AktivitasNarasumber} from "./Profile-Outlet/Profile-Narasumber/Aktivitas-Narasumber/AktivitasNarasumber"
+export {default as RatingNarasumber} from "./Profile-Outlet/Profile-Narasumber/Rating-Narasumber/RatingNarasumber"
+export {default as EditNarasumber} from "./Profile-Outlet/Profile-Narasumber/EditNarasumber/EditNarasumber"
