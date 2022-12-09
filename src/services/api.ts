@@ -2,7 +2,7 @@ import axios from "axios"
 import { config } from "yargs"
 
 export const httpRequest = axios.create({
-    baseURL: 'http://api.tobang.ga/'
+    baseURL: 'https://api.tobang.ga/'
 }) //tergantung backend
 
 // httpRequest.interceptors.request.use(config=> {

@@ -1,6 +1,6 @@
 import { useState, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { DashboardUser, ProfileUser } from "./layouts";
+import { DashboardAdmin, DashboardUser, ProfileUser } from "./layouts";
 import {
   ActivityBerlangsung,
   ActivityGagal,
@@ -135,6 +135,24 @@ const Router: React.FC = () => {
                 element={<MenjadiNarasumber />}
               ></Route>
             </Route>
+          </Route>
+          <Route path="/dashboard-admin" element={<DashboardAdmin />}>
+            <Route
+              path="/dashboard-admin/data-user"
+              element={<h1>Outlet Data User</h1>}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-narasumber"
+              element={<h1>Outlet Data Narasumber</h1>}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-pendapatan"
+              element={<h1>Outlet Data pendapatan</h1>}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-list-kategori"
+              element={<h1>Outlet Data List Kategori</h1>}
+            ></Route>
           </Route>
         </Routes>
       </Suspense>

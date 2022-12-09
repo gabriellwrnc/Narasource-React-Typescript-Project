@@ -52,7 +52,6 @@ const FormLogin: React.FC = () => {
   };
 
   const mutation = useLogin();
-
   const loginWithMutation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
@@ -63,7 +62,11 @@ const FormLogin: React.FC = () => {
         console.log("resp", resp);
         localStorage.setItem("@token", resp.data.access_token);
         localStorage.setItem("@level_access", resp.data.level_access);
-        navigate("/dashboard-user/home-page"); //ganti
+        {
+          resp.data.level_access === "admin"
+            ? navigate("/dashboard-admin/data-user")
+            : navigate("/dashboard-user/home-page");
+        } //ganti
       },
       onError: (error) => {
         setShowErrorModal(true);

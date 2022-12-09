@@ -1,0 +1,82 @@
+.dashboard-admin-layout {
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: "sidebar-admin content-admin";
+  grid-template-columns: 2fr 8fr;
+  height: 100vh;
+}
+
+.dashboard-admin-sidebar {
+  grid-area: sidebar-admin;
+  position: sticky;
+  background: #ffffff;
+  border-right: 2px solid #abaaaa;
+}
+
+.dashboard-admin-outlet {
+  grid-area: content-admin;
+  overflow: auto;
+  padding: 20px 40px;
+  background: #f5f5f5;
+}
+
+.sidebar-admin-logo {
+  width: 100%;
+  padding: 47px 38px;
+  box-sizing: border-box;
+}
+
+.sidebar-admin-content {
+  width: 100%;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+.admin-content-box {
+  width: 100%;
+  height: 30px;
+  padding-left: 45px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+}
+
+.admin-content-active {
+  border-left: 7px solid #3186f5;
+  transition: 0.5s;
+}
+
+.sidebar-admin-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-content-name {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+
+.link-none {
+  text-decoration: none;
+}
+
+.sidebar-admin-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 30%;
+  font-family: "Reem Kufi";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+}
