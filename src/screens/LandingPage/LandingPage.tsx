@@ -272,9 +272,14 @@ const LandingPage: React.FC = () => {
           <div className="landing-page-6-content">
             <span className="page-6-content-title">Informasi</span>
             <span className="content-2-footer-title margin-bottom">
-              Panduan
+              Syarat & Ketentuan
             </span>
-            <span className="content-2-footer-title">Syarat & Ketentuan</span>
+            <Link
+              to={"/privacy-policy"}
+              className="content-2-footer-title link-none "
+            >
+              Kebijakan Privasi
+            </Link>
             <span className="page-6-content-title margin-top">Alamat</span>
             <a
               href="https://goo.gl/maps/7FD12RDfCKHLfzPj6"

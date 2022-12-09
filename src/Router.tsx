@@ -25,6 +25,7 @@ import {
   MencariNarasumberPage5,
   MenjadiNarasumber,
   MenungguPembayaran,
+  PrivacyPolicy,
   RatingNarasumber,
   ResultPage,
 } from "./screens";
@@ -50,6 +51,7 @@ const Router: React.FC = () => {
       <Suspense fallback={<h1>Loading...</h1>}>
         <Routes>
           <Route index element={<LandingPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
           <Route path="/auth" element={<Auth />}>
             <Route path="/auth/login" element={<Login />}></Route>
             <Route path="/auth/register" element={<Register />}></Route>
