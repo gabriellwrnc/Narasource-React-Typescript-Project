@@ -9,6 +9,10 @@ import {
   AktivitasNarasumber,
   AkunSaya,
   ArticlePage,
+  DataKategori,
+  DataNarasumber,
+  DataPendapatan,
+  DataUser,
   EditNarasumber,
   EditProfile,
   GantiSandi,
@@ -139,19 +143,19 @@ const Router: React.FC = () => {
           <Route path="/dashboard-admin" element={<DashboardAdmin />}>
             <Route
               path="/dashboard-admin/data-user"
-              element={<h1>Outlet Data User</h1>}
+              element={<DataUser />}
             ></Route>
             <Route
               path="/dashboard-admin/data-narasumber"
-              element={<h1>Outlet Data Narasumber</h1>}
+              element={<DataNarasumber />}
             ></Route>
             <Route
               path="/dashboard-admin/data-pendapatan"
-              element={<h1>Outlet Data pendapatan</h1>}
+              element={<DataPendapatan />}
             ></Route>
             <Route
               path="/dashboard-admin/data-list-kategori"
-              element={<h1>Outlet Data List Kategori</h1>}
+              element={<DataKategori />}
             ></Route>
           </Route>
         </Routes>

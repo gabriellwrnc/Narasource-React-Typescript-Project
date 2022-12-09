@@ -5,6 +5,11 @@ export const httpRequest = axios.create({
     baseURL: 'https://api.tobang.ga/'
 }) //tergantung backend
 
+export const httpRequestAdmin = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com/'
+}) //tergantung backend
+
+
 // httpRequest.interceptors.request.use(config=> {
 //     const appToken = localStorage.getItem('@token')
     
