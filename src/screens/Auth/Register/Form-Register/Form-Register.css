@@ -37,7 +37,7 @@
 }
 
 .mt-form {
-  margin-top: 26px;
+  margin-top: 20px;
 }
 
 .icon-show-pass-regis {
@@ -49,11 +49,11 @@
 }
 
 .form-regis-terms {
-  margin: 30px 10px 0 0;
   display: flex;
   gap: 12px;
   color: grey;
   width: 330px;
+  margin: 30px auto 0 auto;
   font-family: "Poppins", sans-serif;
   font-size: 10px;
 }
@@ -70,7 +70,7 @@
 }
 
 .register-btn {
-  margin: 21px 0 37px 0;
+  margin-top: 21px;
 }
 
 .form-regis-repeat-pass {

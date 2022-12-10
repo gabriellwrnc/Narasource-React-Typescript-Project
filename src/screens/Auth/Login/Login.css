@@ -1,19 +1,22 @@
 .form-login-wrapper {
-  margin: 0 auto;
   background-color: #fff;
-  width: 100%;
-  height: 100%;
+  width: 84%;
+  height: 94%;
   box-shadow: 1px 1px 30px rgb(68, 68, 68);
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .form-login {
-  width: fit-content;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-login--title {
-  padding-top: 84px;
   text-align: center;
 }
 
@@ -21,13 +24,11 @@
   font-weight: 700;
   font-size: 35px;
   color: #3186f5;
-  padding-bottom: 20px;
+  margin-bottom: 8%;
   letter-spacing: 0.1rem;
 }
 
 .form-login--title .foot {
-  margin: auto;
-  width: 327px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -42,7 +43,7 @@
 
 .form-login--content {
   width: fit-content;
-  margin: 56px 156px;
+  margin-top: 56px;
 }
 
 .form-login--footer {
@@ -62,4 +63,5 @@
 .form-forgot-password {
   width: fit-content;
   margin: auto;
+  border: 1px solid green;
 }

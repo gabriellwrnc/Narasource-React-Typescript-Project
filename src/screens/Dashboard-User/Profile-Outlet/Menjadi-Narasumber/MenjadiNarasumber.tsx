@@ -3,6 +3,7 @@ import "./MenjadiNarasumber.css";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { AuthButton } from "../../../../components";
 import MenjadiValidasi from "./ModalMenjadiValidasi/MenjadiValidasi";
+import MultiSelect, { SelectOption } from "./MultiSelect/MultiSelect";
 
 const MenjadiNarasumber: React.FC = () => {
   const [fileCVName, setFileCVName] = useState<string>("");
@@ -24,6 +25,42 @@ const MenjadiNarasumber: React.FC = () => {
     if (!e.target.files) return;
     setFilePortoName(e.target.files[0].name);
   };
+
+  const options = [
+    {
+      label: "UI/UX Designer",
+      value: 1,
+    },
+    {
+      label: "Graphic Designer",
+      value: 2,
+    },
+    {
+      label: "Frontend Developer",
+      value: 3,
+    },
+    {
+      label: "Backend Developer",
+      value: 4,
+    },
+    {
+      label: "Mobile Developer",
+      value: 5,
+    },
+    {
+      label: "Data Scientist",
+      value: 6,
+    },
+    {
+      label: "Job Analyst",
+      value: 7,
+    },
+    {
+      label: "Business Analyst",
+      value: 8,
+    },
+  ];
+  const [value, setValue] = useState<SelectOption[]>([options[0]]);
 
   return (
     <div className="menjadi-narasumber-wrapper">
@@ -63,16 +100,12 @@ const MenjadiNarasumber: React.FC = () => {
             <label htmlFor="bidang" className="narasumber-label">
               Bidang yang didalami
             </label>
-            <div className="custom-dropdown-wrapper">
-              <input
-                type="text"
-                id="bidang"
-                className="narasumber-custom-dropdown"
-              />
-              <span className="dropdown-icon-span">
-                <RiArrowDropDownLine className="dropdown-icon" />
-              </span>
-            </div>
+            <MultiSelect
+              multiple
+              options={options}
+              value={value}
+              onChange={(o) => setValue(o)}
+            />
           </div>
           <div className="narasumber-form-file-wrapper">
             <label className="narasumber-label">Curriculum Vitae (CV)</label>

@@ -16,9 +16,7 @@ const Login: React.FC = () => {
           <h1 className="foot">Silahkan masukkan detail anda</h1>
         </div>
         <div className="form-login--content">
-          <div className="form-login--content-login">
-            <FormLogin />
-          </div>
+          <FormLogin />
         </div>
         <div className="form-login--footer">
           <p className="akun">Belum punya akun ?</p>

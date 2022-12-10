@@ -25,7 +25,7 @@ import "./LadingPage.css";
 const LandingPage: React.FC = () => {
   const [colorShown, setColorShown] = useState(false);
   const changeColor = () => {
-    if (window.scrollY >= 700) {
+    if (window.scrollY >= 600) {
       setColorShown(true);
     } else {
       setColorShown(false);

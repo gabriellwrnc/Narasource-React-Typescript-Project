@@ -1,6 +1,7 @@
 import React from "react";
 import { icon_salin } from "../../../../../assets";
 import "./Menunggu-Pembayaran.css";
+import Timer from "./Timer/Timer";
 
 const MenungguPembayaran: React.FC = () => {
   return (
@@ -23,7 +24,12 @@ const MenungguPembayaran: React.FC = () => {
                 <span className="batas-tanggal">Kamis, 17 November 2022</span>
                 <span className="batas-waktu">10.30 WIB</span>
               </div>
-              <div className="menunggu-batas-right">24:00:00</div>
+              <div className="menunggu-batas-right">
+                <Timer
+                  totalSec="100"
+                  navigation="/dashboard-user/mencari-narasumber/5"
+                />
+              </div>
             </div>
           </div>
           <div className="menunggu-pembayaran-virtual-wrapper">

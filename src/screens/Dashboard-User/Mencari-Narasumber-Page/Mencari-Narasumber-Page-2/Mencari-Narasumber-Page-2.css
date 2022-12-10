@@ -57,6 +57,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-align: center;
 }
 
 .sesi-time-field {
@@ -74,8 +75,64 @@
   align-items: center;
   cursor: pointer;
   padding: 2px 5px;
+  position: relative;
+}
+.sesi-time-field-selesai {
+  width: 96%;
+  height: 35px;
+  border: 2px solid #abaaaa;
+  border-radius: 5px;
+  background: #f5f5f5;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 5px;
+  position: relative;
+}
+.sesi-time-field-selesai {
+  width: 96%;
+  height: 35px;
+  border: 2px solid #abaaaa;
+  border-radius: 5px;
+  background: #f5f5f5;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 5px;
+  position: relative;
 }
 
 .sesi-next-input-btn {
   margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.icon-timesesi-selesai {
+  position: absolute;
+  left: 4%;
+}
+
+.icon-timesesi {
+  position: absolute;
+  right: 4%;
+}
+
+.notif-box-tidak {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  width: fit-content;
+  display: flex;
+  margin: auto;
 }

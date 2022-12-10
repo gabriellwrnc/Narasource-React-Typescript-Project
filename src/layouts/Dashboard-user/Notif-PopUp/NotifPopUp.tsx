@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { notif_belum, notif_sudah, notif_welcome } from "../../../assets";
 import "./NotifPopUp.css";
 
 const NotifPopUp: React.FC = () => {
   const [notifBelum, setNotifBelum] = useState<boolean>(true);
   const [notifSudah, setNotifSudah] = useState<boolean>(false);
+  const level_access = localStorage.getItem("@level_access");
 
   const toggleBelum = () => {
     setNotifBelum(true);
@@ -34,16 +36,25 @@ const NotifPopUp: React.FC = () => {
         </div>
       </div>
       {notifBelum ? (
-        <div className="notif-box">
-          <img src={notif_belum} alt="notif belum" />
-          <div className="notif-box-left">
-            <span className="notif-title-header">Tawaran Masuk</span>
-            <span className="notif-title-desc">
-              Customer mengajukan permintaan wawancara.
-            </span>
-            <span className="notif-title-date">Hari ini, 17:49</span>
-          </div>
-        </div>
+        level_access === "narasumber" ? (
+          <Link
+            to={"/dashboard-user/profil-user/profile-narasumber/aktivitas"}
+            className="profile-link"
+          >
+            <div className="notif-box">
+              <img src={notif_belum} alt="notif belum" />
+              <div className="notif-box-left">
+                <span className="notif-title-header">Tawaran Masuk</span>
+                <span className="notif-title-desc">
+                  Customer mengajukan permintaan wawancara.
+                </span>
+                <span className="notif-title-date">Hari ini, 17:49</span>
+              </div>
+            </div>
+          </Link>
+        ) : (
+          <div className="notif-box-tidak">Tidak Ada Notif</div>
+        )
       ) : (
         <></>
       )}

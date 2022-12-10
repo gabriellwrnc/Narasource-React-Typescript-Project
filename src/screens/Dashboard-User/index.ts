@@ -10,6 +10,7 @@ export {default as MencariNarasumberPage4} from "./Mencari-Narasumber-Page/Menca
 export {default as MenungguPembayaran} from "./Mencari-Narasumber-Page/Mencari-Narasumber-Page-4/Menunggu-Pembayaran/Menunggu-Pembayaran"
 export {default as MencariNarasumberPage5} from "./Mencari-Narasumber-Page/Mencari-Narasumber-Page-5/Mencari-Narasumber-Page-5"
 export {default as AkunSaya} from "./Profile-Outlet/Akun-Saya/AkunSaya"
+export {default as Meetings} from "./Meetings/Meetings"
 export {default as EditProfile} from "./Profile-Outlet/Edit-Profile/EditProfile"
 export {default as GantiSandi} from "./Profile-Outlet/Ganti-Sandi/GantiSandi"
 export {default as MenjadiNarasumber} from "./Profile-Outlet/Menjadi-Narasumber/MenjadiNarasumber"

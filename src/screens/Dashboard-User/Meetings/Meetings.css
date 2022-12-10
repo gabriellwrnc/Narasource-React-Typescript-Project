@@ -1,0 +1,56 @@
+.meetings-layout {
+  width: 98%;
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meetings-timer {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 414px;
+  height: 97px;
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.25));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.meetings-judul-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.meetings-judul-activity {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+}
+
+.meetings-judul-kategori {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+
+.meetings-timer-countdown {
+  width: 90px;
+  height: 40px;
+  background: #cf4242;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #f5f5f5;
+}

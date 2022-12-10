@@ -9,7 +9,7 @@ const Register: React.FC = () => {
       <div className="form-register">
         <FormRegister />
       </div>
-      <div className="form-login--footer">
+      <div className="form-register--footer">
         <p className="akun">Sudah punya akun ?</p>
         <p className="daftar">
           <Link to="/auth/login" className="link">

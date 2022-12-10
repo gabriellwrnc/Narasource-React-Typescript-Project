@@ -18,6 +18,7 @@ import {
   GantiSandi,
   HomePage,
   LandingPage,
+  Meetings,
   MencariNarasumberPage1,
   MencariNarasumberPage2,
   MencariNarasumberPage3,
@@ -59,6 +60,10 @@ const Router: React.FC = () => {
           </Route>
 
           <Route path="/dashboard-user" element={<DashboardUser />}>
+            <Route
+              path="/dashboard-user/meetings"
+              element={<Meetings />}
+            ></Route>
             <Route
               path="/dashboard-user/home-page"
               element={<HomePage />}

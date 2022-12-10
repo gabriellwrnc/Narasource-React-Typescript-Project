@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { diterima, dot, icon_berlangsung, juan } from "../../../../assets";
 import { AuthButton } from "../../../../components";
 import "./ActivityBerlangsung.css";
@@ -7,6 +8,7 @@ import ModalTerimaTawaran from "./ModalTerimaTawaran/ModalTerimaTawaran";
 const ActivityBerlangsung: React.FC = () => {
   const level_access = localStorage.getItem("@level_access");
   const [showModal, setShowModal] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const toggleModal = () => {
     setShowModal((prevState) => !prevState);
@@ -111,13 +113,19 @@ const ActivityBerlangsung: React.FC = () => {
                   </div>
                   <div
                     className="right-detail-btn-tolak"
-                    onClick={() => toggleModal()}
+                    onClick={() =>
+                      navigate(
+                        "/dashboard-user/profil-user/profile-narasumber/aktivitas"
+                      )
+                    }
                   >
                     Tolak
                   </div>
                 </>
               ) : (
-                <AuthButton size="sm">Masuk</AuthButton>
+                <Link to={"/dashboard-user/meetings"}>
+                  <AuthButton size="sm">Masuk</AuthButton>
+                </Link>
               )}
             </div>
           </div>

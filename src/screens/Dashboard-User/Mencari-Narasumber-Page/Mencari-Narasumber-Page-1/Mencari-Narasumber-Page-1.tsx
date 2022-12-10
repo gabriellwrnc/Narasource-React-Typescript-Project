@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Mencari-Narasumber-Page-1.css";
 
 const MencariNarasumberPage1: React.FC = () => {
+  const [jumlahSesi, setJumlahSesi] = useState<number>(0);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setJumlahSesi(e.target.valueAsNumber);
+    console.log("valueAsNumber", e.target.valueAsNumber);
+  };
+
+  const handleSesi = () => {
+    const stringSesi = jumlahSesi.toString();
+    localStorage.setItem("@jumlah_sesi", stringSesi);
+  };
   return (
     <div className="mencari-narasumber-wrapper">
       <div className="mencari-left">
@@ -70,11 +80,18 @@ const MencariNarasumberPage1: React.FC = () => {
               <label htmlFor="jumlah" className="mencari-input-label">
                 Jumlah Narasumber
               </label>
-              <input type="number" id="jumlah" className="number-field" />
+              <input
+                type="number"
+                value={jumlahSesi}
+                onChange={(e) => handleChange(e)}
+                id="jumlah"
+                className="number-field"
+              />
             </div>
             <Link
               to="/dashboard-user/mencari-narasumber/2"
               className="profile-link"
+              onClick={() => handleSesi()}
             >
               <div className="mencari-input-wrapper">
                 <div className="input-button">
