@@ -74,7 +74,7 @@ const AkunSaya: React.FC = () => {
           <div className="option-icon-container">
             <img src={icon_petunjuk} alt="Icon Petunjuk" />
           </div>
-          <span className="option-desc">Petunjuk</span>
+          <span className="option-desc">Panduan</span>
         </div>
         <div className="akun-saya-option" onClick={() => toggleTentang()}>
           {tentangActive ? (

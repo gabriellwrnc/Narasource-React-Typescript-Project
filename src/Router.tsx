@@ -15,6 +15,9 @@ import {
   DataUser,
   EditNarasumber,
   EditProfile,
+  EditUser1,
+  EditUser2,
+  EditUser3,
   GantiSandi,
   HomePage,
   LandingPage,
@@ -58,12 +61,9 @@ const Router: React.FC = () => {
             <Route path="/auth/register" element={<Register />}></Route>
             <Route path="/auth/forgotPassword" element={<Login />}></Route>
           </Route>
+          <Route path="/meetings" element={<Meetings />}></Route>
 
           <Route path="/dashboard-user" element={<DashboardUser />}>
-            <Route
-              path="/dashboard-user/meetings"
-              element={<Meetings />}
-            ></Route>
             <Route
               path="/dashboard-user/home-page"
               element={<HomePage />}
@@ -151,6 +151,18 @@ const Router: React.FC = () => {
             <Route
               path="/dashboard-admin/data-user"
               element={<DataUser />}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-user/edit-1"
+              element={<EditUser1 />}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-user/edit-2"
+              element={<EditUser2 />}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-user/edit-3"
+              element={<EditUser3 />}
             ></Route>
             <Route
               path="/dashboard-admin/data-narasumber"

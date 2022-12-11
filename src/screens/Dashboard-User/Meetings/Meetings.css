@@ -1,7 +1,9 @@
 .meetings-layout {
-  width: 98%;
-  height: 98%;
+  width: 99%;
+  height: 97vh;
+  /* gap: 43px; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -53,4 +55,13 @@
   font-weight: 500;
   font-size: 20px;
   color: #f5f5f5;
+}
+
+.meetings-screen {
+  width: 1023px;
+  height: 517px;
+  background: #ffffff;
+  box-shadow: 0px 40px 100px rgba(24, 60, 119, 0.7),
+    inset 0px 0px 0px 1.25px rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
 }

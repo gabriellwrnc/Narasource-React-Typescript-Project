@@ -1,16 +1,40 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { email_icon } from "../../../../assets";
 import { AuthButton } from "../../../../components";
 import "./Forgot.css";
 
 const ForgotPassword: React.FC = () => {
+  const [data, setData] = useState({
+    forgot: "",
+  });
+  const [btnDisable, setBtnDisable] = useState<boolean>(true);
   const [email, setEmail] = useState<string>("");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setData({
+      ...data,
+      [e.target.name]: value,
+    });
+  };
+
+  const btnDisablbeFn = () => {
+    if (data.forgot.length) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+  useEffect(() => {
+    const state = btnDisablbeFn();
+    setBtnDisable(state);
+  }, [data.forgot.length]);
   return (
     <div className="forgot">
       <div className="form-login--title">
         <h1 className="head">Lupa Kata Sandi?</h1>
-        <h1 className="foot">
+        <h1 className="foot-forgot">
           Mohon masukan email yang terdaftar pada aplikasi NaraQ.
         </h1>
       </div>
@@ -22,10 +46,14 @@ const ForgotPassword: React.FC = () => {
               <img src={email_icon} className="icon" />
             </label>
             <input
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                handleChange(e);
+              }}
               value={email}
               type="email"
               id="email"
+              name="forgot"
               className="input-field lg-field"
               placeholder="Masukkan email anda"
             />
@@ -33,7 +61,11 @@ const ForgotPassword: React.FC = () => {
         </div>
       </div>
       <div className="forgot-btn">
-        <AuthButton size="md" color="primary">
+        <AuthButton
+          disabled={btnDisable}
+          size="md"
+          color={`${btnDisable ? "disable" : "primary"}`}
+        >
           Reset Sandi
         </AuthButton>
       </div>

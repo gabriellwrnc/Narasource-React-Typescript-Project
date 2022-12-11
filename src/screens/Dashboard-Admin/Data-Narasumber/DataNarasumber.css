@@ -1,0 +1,45 @@
+.link-unduh {
+  color: #3186f5;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.status-narasumber {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.setujui-box {
+  width: 278px;
+  height: 42px;
+  background: #ffffff;
+  border: 1px solid #abaaaa;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+}
+
+.footer-admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.setujui-text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  color: #2b2b2b;
+}

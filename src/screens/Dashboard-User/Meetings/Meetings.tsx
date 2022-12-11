@@ -1,5 +1,5 @@
 import React from "react";
-import { logo_meetings } from "../../../assets";
+import { logo_meetings, zoom_layout } from "../../../assets";
 import Timer from "../Mencari-Narasumber-Page/Mencari-Narasumber-Page-4/Menunggu-Pembayaran/Timer/Timer";
 import "./Meetings.css";
 
@@ -17,7 +17,7 @@ const Meetings: React.FC = () => {
         </div>
         <div className="meetings-timer-countdown">
           <Timer
-            totalSec="1200"
+            totalSec="3"
             navigation={
               level_access === "narasumber"
                 ? "/dashboard-user/profil-user/profile-narasumber/aktivitas"
@@ -26,6 +26,8 @@ const Meetings: React.FC = () => {
           />
         </div>
       </div>
+      <img src={zoom_layout} alt="" />
+      {/* <div className="meetings-screen"></div> */}
     </div>
   );
 };

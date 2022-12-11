@@ -20,7 +20,7 @@ const ModalTerimaTawaran: React.FC<TerimaTawaranModalProps> = (props) => {
         </span>
         <div
           className="logout-valid-btn-yes"
-          onClick={() => navigate("/dashboard-user/meetings")}
+          onClick={() => navigate("/meetings")}
         >
           Ya
         </div>
