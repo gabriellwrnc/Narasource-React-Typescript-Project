@@ -17,7 +17,7 @@ const Meetings: React.FC = () => {
         </div>
         <div className="meetings-timer-countdown">
           <Timer
-            totalSec="3"
+            totalSec="30"
             navigation={
               level_access === "narasumber"
                 ? "/dashboard-user/activity-page/sukses"
