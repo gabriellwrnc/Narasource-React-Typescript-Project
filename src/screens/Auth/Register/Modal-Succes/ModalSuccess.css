@@ -21,6 +21,7 @@
   font-size: 30px;
   font-weight: 600;
   margin-top: 33px;
+  color: black;
 }
 
 .modal-error-desc {
@@ -30,6 +31,7 @@
   font-size: 18px;
   font-weight: 300;
   width: 320px;
+  color: black;
 }
 
 .modal-error-btn {

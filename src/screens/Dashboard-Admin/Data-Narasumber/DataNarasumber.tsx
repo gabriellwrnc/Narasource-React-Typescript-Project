@@ -14,9 +14,11 @@ import { getUser } from "../../../services/user";
 import { AdminUser } from "../../../types/User";
 import ValidasiHapus from "../Data-User/ModalValidasiHapus/ValidasiHapus";
 import "./DataNarasumber.css";
+import ValidasiAcc from "./ModalValidasiAcc/ValidasiAcc";
 
 const DataNarasumber: React.FC = () => {
   const dataUser = useQuery("dataUser", getUser);
+  const [accNarsum, setAccNarsum] = useState<boolean>(false);
   const dataUserTable = dataUser.data?.data || [];
   const dataUserColumn: TableColumn<AdminUser>[] = [
     {
@@ -42,7 +44,11 @@ const DataNarasumber: React.FC = () => {
       title: "Status",
       dataIndex: "email",
       render: (data) => {
-        return <span className="status-narasumber">Belum Disetujui</span>;
+        return accNarsum ? (
+          <span className="status-narasumber">Disetujui</span>
+        ) : (
+          <span className="status-narasumber">Belum Disetujui</span>
+        );
       },
     },
     {
@@ -51,8 +57,19 @@ const DataNarasumber: React.FC = () => {
       render: (data) => {
         return (
           <div className="action-btn">
-            <div className="action-btn-box bg-white"></div>
-            <Link to={"/dashboard-admin/data-user/edit-1"}>
+            {accNarsum ? (
+              <img
+                src={acc_narasumber}
+                onClick={() => toggleModalAcc()}
+                className="acc-narsum"
+              />
+            ) : (
+              <div
+                onClick={() => toggleModalAcc()}
+                className="action-btn-box bg-white"
+              ></div>
+            )}
+            <Link to={"/dashboard-admin/data-narsum/edit-1"}>
               <div className="action-btn-box">
                 <img src={edit_action_admin} alt="edit action" />
               </div>
@@ -66,9 +83,18 @@ const DataNarasumber: React.FC = () => {
     },
   ];
   const [showModalHapus, setShowModalHapus] = useState<boolean>(false);
+  const [showModalAcc, setShowModalAcc] = useState<boolean>(false);
+
+  const toggleModalAcc = () => {
+    setShowModalAcc((prevState) => !prevState);
+  };
 
   const toggleModalHapus = () => {
     setShowModalHapus((prevState) => !prevState);
+  };
+
+  const toggleAcc = () => {
+    setAccNarsum((prevState) => !prevState);
   };
   return (
     <div className="data-user-wrapper">
@@ -108,6 +134,17 @@ const DataNarasumber: React.FC = () => {
       </div>
       {showModalHapus ? (
         <ValidasiHapus onClose={() => toggleModalHapus()} />
+      ) : (
+        <></>
+      )}
+      {showModalAcc ? (
+        <ValidasiAcc
+          onClose={() => toggleModalAcc()}
+          onAcc={() => {
+            toggleModalAcc();
+            toggleAcc();
+          }}
+        />
       ) : (
         <></>
       )}

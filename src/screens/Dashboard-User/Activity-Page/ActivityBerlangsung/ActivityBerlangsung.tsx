@@ -123,7 +123,7 @@ const ActivityBerlangsung: React.FC = () => {
                   </div>
                 </>
               ) : (
-                <Link to={"/dashboard-user/meetings"}>
+                <Link to={"/meetings"}>
                   <AuthButton size="sm">Masuk</AuthButton>
                 </Link>
               )}

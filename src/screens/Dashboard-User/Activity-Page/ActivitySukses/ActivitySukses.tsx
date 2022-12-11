@@ -133,7 +133,7 @@ const ActivitySukses: React.FC = () => {
             {level_access === "narasumber" ? (
               <div className="rating-text-alasan">
                 <label htmlFor="rating" className="rating-alasan">
-                  Alasan Penilaian?
+                  Alasan Penilaian ?
                 </label>
                 <textarea
                   className="rating-alasan-area"
@@ -144,7 +144,7 @@ const ActivitySukses: React.FC = () => {
             ) : rating > 0 ? (
               <div className="rating-text-alasan">
                 <label htmlFor="rating" className="rating-alasan">
-                  Alasan Penilaian?
+                  Alasan Penilaian ?
                 </label>
                 <textarea
                   className="rating-alasan-area"
@@ -163,13 +163,6 @@ const ActivitySukses: React.FC = () => {
               </div>
               <div className="next-content-right-detail-harga-harga">RP20K</div>
             </div>
-            {level_access === "narasumber" ? (
-              <></>
-            ) : (
-              <div className="next-content-right-detail-btn">
-                <AuthButton size="sm">Masuk</AuthButton>
-              </div>
-            )}
           </div>
         </div>
       </div>

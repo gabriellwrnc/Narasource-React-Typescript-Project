@@ -13,7 +13,11 @@ import {
   DataNarasumber,
   DataPendapatan,
   DataUser,
+  EditBidang,
+  EditCV,
   EditNarasumber,
+  EditNarsum,
+  EditPorto,
   EditProfile,
   EditUser1,
   EditUser2,
@@ -163,6 +167,22 @@ const Router: React.FC = () => {
             <Route
               path="/dashboard-admin/data-user/edit-3"
               element={<EditUser3 />}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-narsum/edit-1"
+              element={<EditNarsum />}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-narsum/edit-bidang"
+              element={<EditBidang />}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-narsum/edit-cv"
+              element={<EditCV />}
+            ></Route>
+            <Route
+              path="/dashboard-admin/data-narsum/edit-porto"
+              element={<EditPorto />}
             ></Route>
             <Route
               path="/dashboard-admin/data-narasumber"

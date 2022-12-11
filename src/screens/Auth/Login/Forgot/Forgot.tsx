@@ -3,13 +3,20 @@ import { Link } from "react-router-dom";
 import { email_icon } from "../../../../assets";
 import { AuthButton } from "../../../../components";
 import "./Forgot.css";
+import ModalForgotSuccess from "./ModalForgotSukses/ForgotSukses";
 
 const ForgotPassword: React.FC = () => {
+  const [showModalSukses, setShowModalSukses] = useState<boolean>(false);
+
   const [data, setData] = useState({
     forgot: "",
   });
   const [btnDisable, setBtnDisable] = useState<boolean>(true);
   const [email, setEmail] = useState<string>("");
+
+  const toggleModalSukses = () => {
+    setShowModalSukses((prevState) => !prevState);
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -60,7 +67,7 @@ const ForgotPassword: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="forgot-btn">
+      <div className="forgot-btn" onClick={() => toggleModalSukses()}>
         <AuthButton
           disabled={btnDisable}
           size="md"
@@ -74,6 +81,11 @@ const ForgotPassword: React.FC = () => {
           Kembali
         </Link>
       </div>
+      {showModalSukses ? (
+        <ModalForgotSuccess onClose={() => toggleModalSukses()} />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

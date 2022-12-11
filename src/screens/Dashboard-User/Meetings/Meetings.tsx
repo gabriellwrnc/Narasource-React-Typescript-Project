@@ -20,8 +20,8 @@ const Meetings: React.FC = () => {
             totalSec="3"
             navigation={
               level_access === "narasumber"
-                ? "/dashboard-user/profil-user/profile-narasumber/aktivitas"
-                : "/dashboard-user/activity-page"
+                ? "/dashboard-user/activity-page/sukses"
+                : "/dashboard-user/activity-page/sukses"
             }
           />
         </div>

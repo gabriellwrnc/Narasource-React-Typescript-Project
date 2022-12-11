@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { dot, icon_gagal, juan } from "../../../../assets";
 import { AuthButton } from "../../../../components";
 import "./ActivityGagal.css";
@@ -93,9 +94,11 @@ const ActivityGagal: React.FC = () => {
                     RP20K
                   </div>
                 </div>
-                <div className="next-content-right-detail-btn">
-                  <AuthButton size="sm">Coba Lagi</AuthButton>
-                </div>
+                <Link to={"/dashboard-user/mencari-narasumber/1"}>
+                  <div className="next-content-right-detail-btn">
+                    <AuthButton size="sm">Coba Lagi</AuthButton>
+                  </div>
+                </Link>
               </div>
             </>
           )}
