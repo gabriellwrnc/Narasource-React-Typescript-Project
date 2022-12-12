@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
                 setSortingActive(false);
               }}
             >
-              Popular
+              Terbaru
             </span>
           </div>
           <div className="popular-btn-option">
