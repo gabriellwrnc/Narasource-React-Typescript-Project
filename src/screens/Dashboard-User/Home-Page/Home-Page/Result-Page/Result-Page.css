@@ -8,8 +8,10 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 54px;
-  column-gap: 50px;
+  /* column-gap: 50px; */
+  justify-content: space-between;
   row-gap: 50px;
+  margin: 54px auto 0 auto;
 }
 
 .modal-search-result {

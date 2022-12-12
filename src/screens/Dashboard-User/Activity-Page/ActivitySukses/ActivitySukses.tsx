@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   dot,
   icon_sukses,
@@ -142,15 +143,34 @@ const ActivitySukses: React.FC = () => {
                 />
               </div>
             ) : rating > 0 ? (
-              <div className="rating-text-alasan">
-                <label htmlFor="rating" className="rating-alasan">
-                  Alasan Penilaian ?
-                </label>
-                <textarea
-                  className="rating-alasan-area"
-                  id="rating"
-                  placeholder="Ketik disini secara detail"
-                />
+              <div className="pop-up-after-rating">
+                <div className="rating-text-alasan">
+                  <label htmlFor="rating" className="rating-alasan">
+                    Alasan Penilaian ?
+                  </label>
+                  <textarea
+                    className="rating-alasan-area"
+                    id="rating"
+                    placeholder="Ketik disini secara detail"
+                  />
+                </div>
+                {level_access === "narasumber" ? (
+                  <Link
+                    to={
+                      "/dashboard-user/profil-user/profile-narasumber/aktivitas"
+                    }
+                  >
+                    <div className="next-content-right-detail-btn">
+                      <AuthButton size="sm">Halaman Aktivitas</AuthButton>
+                    </div>
+                  </Link>
+                ) : (
+                  <Link to={"/dashboard-user/activity-page"}>
+                    <div className="next-content-right-detail-btn">
+                      <AuthButton size="sm">Kirim Rating</AuthButton>
+                    </div>
+                  </Link>
+                )}
               </div>
             ) : (
               <></>
