@@ -4,11 +4,14 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { AuthButton } from "../../../../components";
 import MenjadiValidasi from "./ModalMenjadiValidasi/MenjadiValidasi";
 import MultiSelect, { SelectOption } from "./MultiSelect/MultiSelect";
+import MenjadiTerms from "./ModalTermsMenjadi/TermsModal";
 
 const MenjadiNarasumber: React.FC = () => {
   const [fileCVName, setFileCVName] = useState<string>("");
   const [filePortoName, setFilePortoName] = useState<string>("");
   const [showModalMenjadi, setShowModalMenjadi] = useState<boolean>(false);
+  const [showTermsModal, setShowTermsModal] = useState<boolean>(false);
+  const [agree, setAgree] = useState<boolean>(false);
 
   const toggleModalMenjadi = () => {
     setShowModalMenjadi((prevState) => !prevState);
@@ -24,6 +27,16 @@ const MenjadiNarasumber: React.FC = () => {
     console.log(e);
     if (!e.target.files) return;
     setFilePortoName(e.target.files[0].name);
+  };
+
+  const toggleAgree = () => {
+    setAgree((prevState) => !prevState);
+  };
+
+  console.log(agree);
+
+  const toggleTermsModal = () => {
+    setShowTermsModal((prevState) => !prevState);
   };
 
   const options = [
@@ -148,12 +161,14 @@ const MenjadiNarasumber: React.FC = () => {
               type="checkbox"
               id="narasumber-terms"
               className="custom-checkbox"
+              checked={agree}
+              onClick={() => toggleAgree()}
             />
-            <label htmlFor="narasumber-terms">
+            <label htmlFor="">
               Saya telah membaca dan menyetujui{" "}
-              <a className="terms-anchor" href="">
+              <span className="terms-anchor" onClick={() => toggleTermsModal()}>
                 Persyaratan & Kebijakan
-              </a>
+              </span>
               dari pihak NaraSource.
             </label>
           </div>
@@ -168,6 +183,17 @@ const MenjadiNarasumber: React.FC = () => {
       </div>
       {showModalMenjadi ? (
         <MenjadiValidasi onClose={() => toggleModalMenjadi()} />
+      ) : (
+        <></>
+      )}
+      {showTermsModal ? (
+        <MenjadiTerms
+          onClose={() => toggleTermsModal()}
+          onClick={() => {
+            toggleTermsModal();
+            toggleAgree();
+          }}
+        />
       ) : (
         <></>
       )}
